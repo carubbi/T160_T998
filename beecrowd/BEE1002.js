@@ -18,4 +18,4 @@ raio = parseFloat(entradaRaio);
 area = PI * raio * raio;
 
 // Saída de dados
-console.log(`A=${area.toFixed(4)}`);
+console.log(`${`A=${area.toFixed(4)}`}`);

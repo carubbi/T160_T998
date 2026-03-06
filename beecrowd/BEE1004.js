@@ -15,4 +15,4 @@ B = parseInt(entradaB);
 PROD = A * B;
 
 // Saída de dados
-console.log('PROD = ' + PROD);
+console.log(`${'PROD = ' + PROD}`);

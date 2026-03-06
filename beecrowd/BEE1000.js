@@ -5,4 +5,4 @@
 // Processamento dos dados
 
 // Saída de dados
-console.log('Hello World!');
+console.log(`${'Hello World!'}`);

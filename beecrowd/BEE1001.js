@@ -18,4 +18,4 @@ B = parseInt(entradaB, 10);
 X = A + B;
 
 // Saída de dados
-console.log('X = ' + X);
+console.log(`${'X = ' + X}`);

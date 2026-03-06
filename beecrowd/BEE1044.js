@@ -14,7 +14,7 @@ B = parseInt(entradaB);
 
 // Saída de dados
 if ((A % B === 0) || (B % A === 0)) {
-  console.log('Sao Multiplos');
+  console.log(`${'Sao Multiplos'}`);
 } else {
-  console.log('Nao sao Multiplos');
+  console.log(`${'Nao sao Multiplos'}`);
 }

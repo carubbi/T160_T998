@@ -18,4 +18,4 @@ vendas = parseFloat(entradaVendas);
 total = salarioFixo + (vendas * 0.15);
 
 // Saída de dados
-console.log('TOTAL = R$ ' + total.toFixed(2));
+console.log(`${'TOTAL = R$ ' + total.toFixed(2)}`);

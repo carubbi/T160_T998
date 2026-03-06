@@ -18,4 +18,4 @@ minutos = parseInt(resto / 60);
 segundos = resto % 60;
 
 // Saída de dados
-console.log(horas + ':' + minutos + ':' + segundos);
+console.log(`${horas + ':' + minutos + ':' + segundos}`);

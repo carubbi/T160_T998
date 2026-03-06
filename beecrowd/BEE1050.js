@@ -41,4 +41,4 @@ switch (DDD) {
 }
 
 // Saída de dados
-console.log(cidade);
+console.log(`${cidade}`);

@@ -15,4 +15,4 @@ B = parseInt(entradaB);
 SOMA = A + B;
 
 // Saída de dados
-console.log('SOMA = ' + SOMA);
+console.log(`${'SOMA = ' + SOMA}`);

@@ -15,4 +15,4 @@ velocidade = parseInt(entradaVelocidade);
 litros = (tempo * velocidade) / 12;
 
 // Saída de dados
-console.log(litros.toFixed(3));
+console.log(`${litros.toFixed(3)}`);
