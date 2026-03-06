@@ -1,5 +1,9 @@
-# Raciocínio Lógico Algorítmico: Aula 2
-## O que é lógica?
+<img src="../imgs/UNIFOR_logo1b.png" width="400"> 
+
+# Raciocínio Lógico Algorítmico
+Orientador: Prof. Me Ricardo Carubbi
+
+## Aula 2: O que é lógica?
 
 > Lógica é a análise de métodos de raciocínio (Mendelson, 1987)
 
