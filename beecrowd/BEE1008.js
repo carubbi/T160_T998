@@ -20,5 +20,5 @@ valorHora = parseFloat(entradaValorHora);
 salario = horas * valorHora;
 
 // Saída de dados
-console.log(`${'NUMBER = ' + numero}`);
-console.log(`${'SALARY = U$ ' + salario.toFixed(2)}`);
+console.log(`NUMBER = ${numero}`);
+console.log(`SALARY = U$ ${salario.toFixed(2)}`);

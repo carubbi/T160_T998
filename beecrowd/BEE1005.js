@@ -15,4 +15,4 @@ B = parseFloat(entradaB);
 MEDIA = ((A * 3.5) + (B * 7.5)) / 11;
 
 // Saída de dados
-console.log(`${'MEDIA = ' + MEDIA.toFixed(5)}`);
+console.log(`MEDIA = ${MEDIA.toFixed(5)}`);

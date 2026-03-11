@@ -15,4 +15,4 @@ combustivel = parseFloat(entradaCombustivel);
 consumo = distancia / combustivel;
 
 // Saída de dados
-console.log(`${consumo.toFixed(3) + ' km/l'}`);
+console.log(`${consumo.toFixed(3)} km/l`);

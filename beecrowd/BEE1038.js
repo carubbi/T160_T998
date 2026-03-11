@@ -32,4 +32,4 @@ if (codProd == 1) {
 totalPagar = qtdProd * precoProd;
 
 // Saída de dados
-console.log(`${`Total: R$ ${totalPagar.toFixed(2)}`}`);
+console.log(`Total: R$ ${totalPagar.toFixed(2)}`);

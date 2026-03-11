@@ -11,4 +11,4 @@ distancia = parseInt(entradaDistancia);
 tempo = distancia * 2;
 
 // Saída de dados
-console.log(`${tempo + ' minutos'}`);
+console.log(`${tempo} minutos`);

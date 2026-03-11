@@ -20,4 +20,4 @@ if (inicio < fim) {
 }
 
 // Saída de dados
-console.log(`${'O JOGO DUROU ' + duracao + ' HORA(S)'}`);
+console.log(`O JOGO DUROU ${duracao} HORA(S)`);
