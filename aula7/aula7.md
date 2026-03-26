@@ -319,7 +319,56 @@ do {
 } while (i < 3);
 ```
 
-### Exemplo 6: `do...while` para pedir um número positivo
+### Exemplo 6: `do...while` para pedir uma senha
+
+#### Descrição narrativa
+1. Ler uma senha.
+2. Executar o teste ao menos uma vez.
+3. Se a senha estiver incorreta, informar erro.
+4. Repetir até que a senha correta seja digitada.
+5. Mostrar a mensagem de acesso liberado.
+
+#### Fluxograma
+```mermaid
+flowchart TD
+A([INICIO]) --> B
+subgraph SEQ [Laco do...while]
+B[/senha/]
+B --> C{senha != 1234}
+C -- V --> D[/Senha incorreta/]
+end
+C -- V --> B
+C -- F --> E[/Acesso liberado/]
+E --> F([FIM])
+```
+
+#### Teste de mesa
+
+| passo | senha | senha != 1234 | saída |
+| --- | --- | --- | --- |
+| 1 | 1111 | V | Senha incorreta |
+| 2 | 9999 | V | Senha incorreta |
+| 3 | 1234 | F | Acesso liberado |
+
+#### Código JavaScript (Programiz)
+```javascript
+// Declaracao de variaveis
+let senha;
+
+// Processamento e saida
+do {
+    senha = prompt("Digite a senha:"); // 1111, 9999, 1234
+
+    if (senha != "1234") {
+        console.log("Senha incorreta");
+    }
+} while (senha != "1234");
+
+console.log("Acesso liberado");
+```
+
+
+### Exemplo 7: `do...while` para pedir um número positivo
 
 #### Descrição narrativa
 1. Ler um número.
@@ -373,7 +422,7 @@ do {
 console.log("Numero valido");
 ```
 
-### Exemplo 7: `do...while` para pedir nota até ela estar válida
+### Exemplo 8: `do...while` para pedir nota até ela estar válida
 
 #### Descrição narrativa
 1. Ler uma nota.
@@ -426,7 +475,7 @@ do {
 console.log(`Nota valida: ${nota}`);
 ```
 
-### Exemplo 8: `do...while` para mostrar menu até escolher sair
+### Exemplo 9: `do...while` para mostrar menu até escolher sair
 
 #### Descrição narrativa
 1. Ler uma opção do menu.
