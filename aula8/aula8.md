@@ -6,35 +6,36 @@ Orientador: Prof. Me Ricardo Carubbi
 ## Funções e algoritmos clássicos
 
 ### Objetivo da aula
-Compreender como reutilizar código com funções e como implementar algoritmos clássicos de troca de valores, contagem, soma, multiplicação, fatorial, Fibonacci, conversão de base e geração dos primeiros números primos em JavaScript.
+Compreender como **reutilizar código com funções** e como implementar **algoritmos clássicos** de **troca de valores**, **contagem**, **soma**, **multiplicação**, **fatorial**, **Fibonacci**, **conversão de base** e **geração dos primeiros números primos** em JavaScript.
 
 ## 1. Fundamentação teórica
-Em algoritmos maiores, repetir o mesmo bloco de código em vários pontos dificulta manutenção, aumenta a chance de erro e torna a leitura mais cansativa. Para evitar isso, usamos funções.
+Em algoritmos maiores, repetir o mesmo bloco de código em vários pontos dificulta a **manutenção**, aumenta a **chance de erro** e torna a leitura mais cansativa. Para evitar isso, usamos **funções**.
 
-Uma função é um bloco de código que:
+Uma **função** é um bloco de código que:
 
-- recebe valores de entrada, chamados parâmetros;
-- executa uma tarefa específica;
-- pode devolver um resultado por meio de `return`.
+- recebe valores de entrada, chamados **parâmetros**;
+- executa uma **tarefa específica**;
+- pode devolver um resultado por meio de `return`, quando a intenção for produzir um **valor** para uso posterior;
+- também pode apenas executar uma **ação**, como exibir uma mensagem, sem retornar valor.
 
 O uso de funções ajuda a:
 
-- dividir problemas grandes em partes menores;
-- reaproveitar a mesma lógica em vários pontos;
-- testar trechos de código separadamente;
-- deixar o algoritmo mais organizado.
+- **dividir problemas grandes** em partes menores;
+- **reaproveitar a mesma lógica** em vários pontos;
+- **testar trechos de código** separadamente;
+- deixar o algoritmo mais **organizado**.
 
 Nesta aula, as funções serão aplicadas a algoritmos clássicos muito usados em exercícios introdutórios.
 
 ### Decomposição de problemas como estratégia computacional
-Uma estratégia importante em programação é dividir um problema grande em partes menores e mais fáceis de resolver. Cada parte pode ser transformada em uma função com responsabilidade bem definida.
+Uma estratégia importante em programação é **dividir um problema grande em partes menores** e mais fáceis de resolver. Cada parte pode ser transformada em uma **função com responsabilidade bem definida**.
 
 Esse processo melhora:
 
-- a organização da solução;
-- a leitura do algoritmo;
-- a reutilização de código;
-- a identificação de erros.
+- a **organização** da solução;
+- a **leitura** do algoritmo;
+- a **reutilização de código**;
+- a **identificação de erros**.
 
 #### Fluxograma
 ```mermaid
@@ -68,6 +69,9 @@ Exemplo de uso:
 
 ```javascript
 function somar(a, b) {
+    a = parseFloat(a);
+    b = parseFloat(b);
+
     return a + b;
 }
 
@@ -78,31 +82,41 @@ let total;
 num1 = prompt("Digite o primeiro número:"); // 4
 num2 = prompt("Digite o segundo número:"); // 7
 
-num1 = parseFloat(num1);
-num2 = parseFloat(num2);
-
 total = somar(num1, num2);
 console.log(total); // 11
 ```
 
+<img src="../imgs/aula8.png" width="800"> 
+
+**Figura 8.1** - Uso de funções e comparação entre a sintaxe tradicional de função com `function nome() {}` e a sintaxe moderna com **arrow function**, como em `const nome = () => {}`.
+
+### Comentário sobre a Figura 8.1
+A figura destaca duas ideias importantes. A primeira é o **conceito de função**: um bloco de código criado para executar uma tarefa específica, podendo ou não **retornar um valor**. A segunda é a existência de **duas formas comuns de escrever funções em JavaScript**: a forma tradicional e a forma moderna com **arrow function**.
+
+Na prática, as duas sintaxes servem ao mesmo propósito fundamental: **organizar o algoritmo**, **evitar repetição de código** e **facilitar a reutilização da lógica**. Em cursos introdutórios, a forma tradicional com `function nome() {}` costuma ser a melhor para começar, porque sua estrutura é mais explícita e facilita a leitura.
+
+A sintaxe com **arrow function**, como em `const nome = () => {}`, aparece com muita frequência em JavaScript moderno. Por isso, é importante que o aluno reconheça essa forma desde cedo, mesmo que os exemplos principais da aula continuem usando a sintaxe tradicional para priorizar a clareza didática.
+
+O mais importante, neste momento, não é memorizar apenas a diferença visual entre as duas escritas, mas entender a **aplicação das funções**: separar partes do problema, dar nome a cada etapa do raciocínio e construir soluções mais **claras**, **modulares** e **fáceis de manter**.
+
 ## 3. Escopo de variáveis em funções
 
 ### Ideia principal
-Escopo é a região do algoritmo em que uma variável pode ser usada. Ao trabalhar com funções, é importante distinguir variáveis locais das variáveis declaradas fora da função.
+**Escopo** é a região do algoritmo em que uma variável pode ser usada. Ao trabalhar com funções, é importante distinguir **variáveis locais** das **variáveis declaradas fora da função**.
 
 ### Escopo local
-Chamamos de escopo local o conjunto de variáveis que existem apenas dentro de uma função.
+Chamamos de **escopo local** o conjunto de variáveis que existem apenas dentro de uma função.
 
 - variáveis declaradas dentro da função existem apenas dentro dela;
-- parâmetros também pertencem ao escopo da função;
+- **parâmetros** também pertencem ao escopo da função;
 - essas variáveis deixam de fazer sentido fora da função.
 
 ### Escopo global
-Chamamos de escopo global o conjunto de variáveis declaradas fora das funções, em uma região mais ampla do algoritmo.
+Chamamos de **escopo global** o conjunto de variáveis declaradas fora das funções, em uma região mais ampla do algoritmo.
 
 - essas variáveis podem ser usadas em outras partes do programa;
-- seu uso exige cuidado, para evitar confusão e alterações indevidas;
-- em algoritmos bem organizados, prefere-se usar funções com parâmetros e retornos claros, reduzindo dependência de variáveis globais.
+- seu uso exige **cuidado**, para evitar confusão e alterações indevidas;
+- em algoritmos bem organizados, prefere-se usar **funções com parâmetros e retornos claros**, reduzindo a dependência de variáveis globais.
 
 ### Exemplo básico
 
@@ -123,18 +137,20 @@ console.log(aluno);
 ```
 
 ### Observação didática
-No exemplo, `nome` e `saudacao` pertencem ao escopo local da função `mostrarMensagem`. Já a variável `aluno` foi declarada fora da função e pertence ao escopo global.
+No exemplo, `nome` e `saudacao` pertencem ao **escopo local** da função `mostrarMensagem`. Já a variável `aluno` foi declarada fora da função e pertence ao **escopo global**.
+
+Observe também que `mostrarMensagem` **não usa `return`**. Isso acontece porque seu objetivo não é **devolver um valor**, mas realizar uma **saída** com `console.log()`. Esse tipo de função também é válido e útil quando a responsabilidade principal é **executar uma ação**.
 
 Entender escopo é importante para:
 
 - evitar confusão entre variáveis com funções diferentes;
-- impedir alterações indevidas em dados do algoritmo;
-- organizar melhor a responsabilidade de cada função.
+- impedir **alterações indevidas** em dados do algoritmo;
+- organizar melhor a **responsabilidade de cada função**.
 
 ## 4. Reutilização de código com o uso de funções
 
 ### Ideia principal
-Quando um mesmo cálculo ou processo aparece várias vezes, ele deve ser colocado em uma função.
+Quando um mesmo cálculo ou processo aparece várias vezes, ele deve ser colocado em uma **função**.
 
 ### Exemplo básico: calcular o dobro de vários valores
 
@@ -147,6 +163,8 @@ Quando um mesmo cálculo ou processo aparece várias vezes, ele deve ser colocad
 #### Código JavaScript
 ```javascript
 function calcularDobro(numero) {
+    numero = parseFloat(numero);
+
     return numero * 2;
 }
 
@@ -158,10 +176,6 @@ valor1 = prompt("Digite o primeiro valor:"); // 5
 valor2 = prompt("Digite o segundo valor:"); // 8
 valor3 = prompt("Digite o terceiro valor:"); // 12
 
-valor1 = parseFloat(valor1);
-valor2 = parseFloat(valor2);
-valor3 = parseFloat(valor3);
-
 valor1 = calcularDobro(valor1);
 valor2 = calcularDobro(valor2);
 valor3 = calcularDobro(valor3);
@@ -172,14 +186,14 @@ console.log(valor3);
 ```
 
 ### Observação didática
-Sem função, o cálculo `numero * 2` seria repetido várias vezes. Com função, o algoritmo fica menor e mais fácil de alterar.
+Sem função, o cálculo `numero * 2` seria repetido várias vezes. Com função, o algoritmo fica **menor**, mais **organizado** e mais **fácil de alterar**.
 
 ## 5. Algoritmo de troca de valores
 
 ### Ideia principal
-Trocar valores significa fazer com que o valor de `a` passe para `b` e o valor de `b` passe para `a`.
+**Trocar valores** significa fazer com que o valor de `a` passe para `b` e o valor de `b` passe para `a`.
 
-Para isso, normalmente usamos uma variável auxiliar.
+Para isso, normalmente usamos uma **variável auxiliar**.
 
 ### Exemplo básico
 
@@ -196,6 +210,9 @@ Para isso, normalmente usamos uma variável auxiliar.
 function trocarValores(a, b) {
     let aux;
 
+    a = parseFloat(a);
+    b = parseFloat(b);
+
     aux = a;
     a = b;
     b = aux;
@@ -210,9 +227,6 @@ let novoB;
 novoA = prompt("Digite o valor de a:"); // 10
 novoB = prompt("Digite o valor de b:"); // 25
 
-novoA = parseFloat(novoA);
-novoB = parseFloat(novoB);
-
 resultado = trocarValores(novoA, novoB);
 [novoA, novoB] = resultado;
 
@@ -221,16 +235,16 @@ console.log(novoB); // 10
 ```
 
 ### Observação didática
-Esse algoritmo é importante porque aparece em ordenação, reorganização de dados e vários problemas de comparação. Aqui foi usada uma estrutura de dados simples para devolver dois valores ao mesmo tempo, e depois cada valor foi armazenado em sua própria variável. O estudo formal de estruturas de dados será abordado mais adiante na disciplina.
+Esse algoritmo é importante porque aparece em **ordenação**, **reorganização de dados** e vários problemas de **comparação**. Aqui foi usada uma estrutura de dados simples para devolver dois valores ao mesmo tempo, e depois cada valor foi armazenado em sua própria variável. O estudo formal de **estruturas de dados** será abordado mais adiante na disciplina.
 
 ## 6. Algoritmo de contagem, soma e multiplicação
 
 ### Ideia principal
 Em problemas com repetição, três padrões aparecem com frequência:
 
-- contador: registra quantas vezes algo aconteceu;
-- acumulador de soma: soma valores ao longo do processo;
-- acumulador de produto: multiplica valores ao longo do processo.
+- **contador**: registra quantas vezes algo aconteceu;
+- **acumulador de soma**: soma valores ao longo do processo;
+- **acumulador de produto**: multiplica valores ao longo do processo.
 
 ### Exemplo básico: contar, somar e multiplicar de 1 até `n`
 
@@ -252,6 +266,7 @@ function calcularResumo(n) {
     let produto;
     let i;
 
+    n = parseInt(n);
     contador = 0;
     soma = 0;
     produto = 1;
@@ -272,8 +287,6 @@ let produtoFinal;
 let n;
 
 n = prompt("Digite o valor de n:"); // 4
-n = parseInt(n);
-
 resultado = calcularResumo(n);
 [contadorFinal, somaFinal, produtoFinal] = resultado;
 
@@ -289,12 +302,12 @@ Para `n = 4`, teremos:
 - produto = 24
 
 ### Observação didática
-Neste exemplo, foi usada uma estrutura de dados simples para reunir vários resultados em um único retorno. Em seguida, cada resultado foi armazenado em sua própria variável, evitando o uso direto de indexação. A ideia aparece aqui apenas como antecipação prática; estruturas de dados serão estudadas com mais profundidade mais adiante na disciplina.
+Neste exemplo, foi usada uma estrutura de dados simples para reunir **vários resultados em um único retorno**. Em seguida, cada resultado foi armazenado em sua própria variável, evitando o uso direto de indexação. A ideia aparece aqui apenas como antecipação prática; **estruturas de dados** serão estudadas com mais profundidade mais adiante na disciplina.
 
 ## Algoritmo de fatorial
 
 ### Ideia principal
-O fatorial de um número natural `n` é o produto de todos os inteiros de 1 até `n`.
+O **fatorial** de um número natural `n` é o produto de todos os inteiros de `1` até `n`.
 
 Exemplos:
 
@@ -303,7 +316,7 @@ Exemplos:
 
 Por convenção:
 
-- `0! = 1`
+- **`0! = 1`**
 
 ### Exemplo básico
 
@@ -319,6 +332,7 @@ function calcularFatorial(n) {
     let fatorial;
     let i;
 
+    n = parseInt(n);
     fatorial = 1;
 
     for (i = 1; i <= n; i++) {
@@ -331,18 +345,16 @@ function calcularFatorial(n) {
 let numero;
 
 numero = prompt("Digite um número para calcular o fatorial:"); // 5
-numero = parseInt(numero);
-
 console.log(calcularFatorial(numero)); // 120
 ```
 
 ### Ponto de atenção
-O algoritmo iterativo de fatorial usa multiplicação acumulada. Por isso, ele é um caso particular do padrão visto na seção anterior.
+O algoritmo iterativo de fatorial usa **multiplicação acumulada**. Por isso, ele é um caso particular do padrão visto na seção anterior.
 
 ## 8. Algoritmo de sequência de Fibonacci
 
 ### Ideia principal
-Na sequência de Fibonacci, cada termo a partir do terceiro é a soma dos dois anteriores.
+Na **sequência de Fibonacci**, cada termo a partir do terceiro é a **soma dos dois anteriores**.
 
 Sequência inicial:
 
@@ -366,6 +378,7 @@ function gerarFibonacci(quantidade) {
     let i;
     let sequencia;
 
+    quantidade = parseInt(quantidade);
     a = 0;
     b = 1;
     sequencia = "";
@@ -388,25 +401,23 @@ function gerarFibonacci(quantidade) {
 let quantidade;
 
 quantidade = prompt("Digite a quantidade de termos:"); // 7
-quantidade = parseInt(quantidade);
-
 console.log(gerarFibonacci(quantidade)); // 0, 1, 1, 2, 3, 5, 8
 ```
 
 ### Ponto de atenção
-Neste algoritmo, a ordem das atualizações importa. Se as variáveis forem atualizadas na ordem errada, a sequência fica incorreta.
+Neste algoritmo, a **ordem das atualizações importa**. Se as variáveis forem atualizadas na ordem errada, a sequência fica incorreta.
 
 ## 9. Algoritmo de conversão de base
 
 ### Ideia principal
-Conversão de base é a mudança de representação de um número. Um caso clássico em aulas introdutórias é converter um número decimal para binário.
+**Conversão de base** é a mudança de representação de um número. Um caso clássico em aulas introdutórias é converter um **número decimal para binário**.
 
 O processo funciona com divisões sucessivas por 2:
 
-1. dividir o número por 2;
-2. guardar o resto;
-3. repetir com o quociente;
-4. ler os restos de trás para frente.
+1. **dividir** o número por 2;
+2. **guardar o resto**;
+3. repetir com o **quociente**;
+4. ler os restos de **trás para frente**.
 
 ### Exemplo básico: decimal para binário
 
@@ -422,6 +433,8 @@ O processo funciona com divisões sucessivas por 2:
 function decimalParaBinario(numero) {
     let binario;
     let resto;
+
+    numero = parseInt(numero);
 
     if (numero == 0) {
         return "0";
@@ -441,23 +454,21 @@ function decimalParaBinario(numero) {
 let numero;
 
 numero = prompt("Digite um número decimal inteiro:"); // 13
-numero = parseInt(numero);
-
 console.log(decimalParaBinario(numero)); // 1101
 ```
 
 ### Observação didática
 Esse algoritmo combina:
 
-- repetição;
-- operador de resto `%`;
-- divisão inteira;
+- **repetição**;
+- operador de **resto `%`**;
+- **divisão inteira**;
 - construção gradual de uma resposta.
 
 ## 10. Algoritmo de geração dos n-primeiros números primos
 
 ### Ideia principal
-Um número primo é divisível apenas por 1 e por ele mesmo.
+Um **número primo** é divisível apenas por `1` e por ele mesmo.
 
 Para gerar os `n` primeiros primos, precisamos:
 
@@ -480,6 +491,8 @@ Para gerar os `n` primeiros primos, precisamos:
 function ehPrimo(numero) {
     let divisor;
 
+    numero = parseInt(numero);
+
     if (numero < 2) {
         return false;
     }
@@ -498,6 +511,7 @@ function gerarNPrimeirosPrimos(quantidade) {
     let candidato;
     let resposta;
 
+    quantidade = parseInt(quantidade);
     encontrados = 0;
     candidato = 2;
     resposta = "";
@@ -521,18 +535,16 @@ function gerarNPrimeirosPrimos(quantidade) {
 let quantidade;
 
 quantidade = prompt("Digite quantos números primos deseja gerar:"); // 5
-quantidade = parseInt(quantidade);
-
 console.log(gerarNPrimeirosPrimos(quantidade)); // 2, 3, 5, 7, 11
 ```
 
 ### Ponto de atenção
 Esse algoritmo usa decomposição em funções:
 
-- uma função decide se um número é primo;
-- outra função usa esse teste para gerar vários primos.
+- uma função decide se um número é **primo**;
+- outra função usa esse teste para gerar **vários primos**.
 
-Esse é um bom exemplo de reutilização de código.
+Esse é um bom exemplo de **reutilização de código**.
 
 ## 11. Comparativo rápido dos algoritmos estudados
 
@@ -551,12 +563,12 @@ Esse é um bom exemplo de reutilização de código.
 ### Por que este problema é adequado?
 O problema `1153` trabalha diretamente com:
 
-- repetição;
-- acumulador de produto;
-- algoritmo de fatorial;
-- organização da solução com função.
+- **repetição**;
+- **acumulador de produto**;
+- **algoritmo de fatorial**;
+- organização da solução com **função**.
 
-Mesmo que o enunciado não exija explicitamente funções, podemos usá-las para deixar a solução mais clara.
+Mesmo que o enunciado não exija explicitamente funções, podemos usá-las para deixar a solução mais **clara**.
 
 ### Estratégia de resolução
 1. Ler um número inteiro `n`.
@@ -573,6 +585,7 @@ function calcularFatorial(n) {
     let fatorial;
     let i;
 
+    n = parseInt(n);
     fatorial = 1;
 
     for (i = 1; i <= n; i++) {
@@ -582,19 +595,15 @@ function calcularFatorial(n) {
     return fatorial;
 }
 
-let n;
-
-n = parseInt(input);
-
-console.log(calcularFatorial(n));
+console.log(calcularFatorial(input));
 ```
 
 ### Observação didática
-Esse exemplo mostra que funções não servem apenas para programas grandes. Mesmo em problemas pequenos, elas ajudam a separar:
+Esse exemplo mostra que **funções** não servem apenas para programas grandes. Mesmo em problemas pequenos, elas ajudam a separar:
 
-- leitura da entrada;
-- processamento principal;
-- exibição da saída.
+- **leitura da entrada**;
+- **processamento principal**;
+- **exibição da saída**.
 
 ## 13. Erros comuns
 
@@ -608,15 +617,15 @@ Esse exemplo mostra que funções não servem apenas para programas grandes. Mes
 8. Confundir variáveis locais da função com variáveis declaradas fora dela.
 
 ## 14. Fechamento
-Nesta aula, você estudou como usar funções para organizar algoritmos e reaproveitar lógica. Também viu sete padrões clássicos muito frequentes em programação introdutória: troca de valores, acumuladores, fatorial, Fibonacci, conversão de base e números primos.
+Nesta aula, você estudou como usar **funções** para organizar algoritmos e **reaproveitar lógica**. Também viu sete padrões clássicos muito frequentes em programação introdutória: **troca de valores**, **acumuladores**, **fatorial**, **Fibonacci**, **conversão de base** e **números primos**.
 
-O ponto central não é apenas memorizar cada algoritmo, mas perceber que muitos problemas podem ser construídos a partir de poucos padrões:
+O ponto central não é apenas memorizar cada algoritmo, mas perceber que muitos problemas podem ser construídos a partir de poucos **padrões**:
 
-- repetição;
-- contagem;
-- acumulação;
-- teste de divisibilidade;
-- decomposição em funções.
+- **repetição**;
+- **contagem**;
+- **acumulação**;
+- **teste de divisibilidade**;
+- **decomposição em funções**.
 
 ## Saiba mais
 - MDN - Functions: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Functions
