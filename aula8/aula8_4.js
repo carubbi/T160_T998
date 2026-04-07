@@ -28,3 +28,23 @@ resultado = trocarValores(novoA, novoB);
 // Saida
 console.log(novoA); // 25
 console.log(novoB); // 10
+
+/*
+Opcao equivalente usando variavel temporaria de forma direta:
+let a;
+let b;
+let temp;
+
+a = prompt("Digite o valor de a:"); // 10
+b = prompt("Digite o valor de b:"); // 25
+
+a = parseFloat(a);
+b = parseFloat(b);
+
+temp = a;
+a = b;
+b = temp;
+
+console.log(a); // 25
+console.log(b); // 10
+*/

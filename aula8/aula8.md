@@ -234,8 +234,28 @@ console.log(novoA); // 25
 console.log(novoB); // 10
 ```
 
+#### Opção equivalente usando variável temporária de forma direta
+```javascript
+let a;
+let b;
+let temp;
+
+a = prompt("Digite o valor de a:"); // 10
+b = prompt("Digite o valor de b:"); // 25
+
+a = parseFloat(a);
+b = parseFloat(b);
+
+temp = a;
+a = b;
+b = temp;
+
+console.log(a); // 25
+console.log(b); // 10
+```
+
 ### Observação didática
-Esse algoritmo é importante porque aparece em **ordenação**, **reorganização de dados** e vários problemas de **comparação**. Aqui foi usada uma estrutura de dados simples para devolver dois valores ao mesmo tempo, e depois cada valor foi armazenado em sua própria variável. O estudo formal de **estruturas de dados** será abordado mais adiante na disciplina.
+Esse algoritmo é importante porque aparece em **ordenação**, **reorganização de dados** e vários problemas de **comparação**. No primeiro exemplo, foi usada uma estrutura de dados simples para devolver dois valores ao mesmo tempo, e depois cada valor foi armazenado em sua própria variável. Na opção equivalente, a troca foi mostrada de forma **direta**, usando apenas uma **variável temporária**. O estudo formal de **estruturas de dados** será abordado mais adiante na disciplina.
 
 ## 6. Algoritmo de contagem, soma e multiplicação
 
