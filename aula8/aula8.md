@@ -330,23 +330,27 @@ Em alguns problemas, não sabemos com antecedência **quantas repetições** ser
 
 #### Código JavaScript
 ```javascript
-let numero;
+function lerAteZero() {
+    let numero;
 
-while (true) {
-    numero = parseInt(prompt("Digite 0 para sair:"));
+    while (true) {
+        numero = parseInt(prompt("Digite 0 para sair:"));
 
-    if (numero === 0) {
-        break;
+        if (numero === 0) {
+            break;
+        }
+
+        console.log("Voce digitou: " + numero);
     }
 
-    console.log("Voce digitou: " + numero);
+    console.log("Programa encerrado.");
 }
 
-console.log("Programa encerrado.");
+lerAteZero();
 ```
 
 ### Observação didática
-O laço `while (true)` cria uma repetição que, em princípio, nunca termina sozinha. Por isso, ele só deve ser usado quando existe uma **condição de parada clara** dentro do bloco. Neste exemplo, o comando `break` encerra o laço quando o usuário digita `0`.
+O laço `while (true)` cria uma repetição que, em princípio, nunca termina sozinha. Por isso, ele só deve ser usado quando existe uma **condição de parada clara** dentro do bloco. Neste exemplo, a função `lerAteZero` organiza esse comportamento em uma responsabilidade específica, e o comando `break` encerra o laço quando o usuário digita `0`.
 
 ## Algoritmo de fatorial
 
