@@ -188,6 +188,63 @@ console.log(valor3);
 ### Observação didática
 Sem função, o cálculo `numero * 2` seria repetido várias vezes. Com função, o algoritmo fica **menor**, mais **organizado** e mais **fácil de alterar**.
 
+### Exemplo de modularização
+
+#### Descrição narrativa
+1. Criar uma função para converter o texto digitado em número.
+2. Criar uma função para verificar se a nota está no intervalo válido.
+3. Criar uma função para calcular a média entre duas notas.
+4. Ler as duas notas no escopo global.
+5. Converter as entradas.
+6. Validar os valores antes de calcular a média.
+7. Exibir a média ou uma mensagem de erro.
+
+#### Código JavaScript
+```javascript
+// Funções
+function converteNum(texto) {
+    let num;
+
+    num = parseFloat(texto);
+
+    if (num % 1 === 0) {
+        return parseInt(num);
+    } else {
+        return num;
+    }
+}
+
+function validaNota(nota) {
+    return nota >= 0 && nota <= 10;
+}
+
+function media(nota1, nota2) {
+    return (nota1 + nota2) / 2;
+}
+
+// Escopo global
+let AV1;
+let AV2;
+let MP;
+
+AV1 = prompt('Digite a nota da AV1: ');
+AV2 = prompt('Digite a nota da AV2: ');
+
+AV1 = converteNum(AV1);
+AV2 = converteNum(AV2);
+
+if (validaNota(AV1) && validaNota(AV2)) {
+    MP = media(AV1, AV2);
+} else {
+    MP = 'Verifique as notas!';
+}
+
+console.log(MP);
+```
+
+### Observação didática
+Esse exemplo mostra uma forma simples de **modularizar** o problema. Em vez de concentrar toda a lógica no bloco principal, o algoritmo separa três responsabilidades: **converter**, **validar** e **calcular**. Essa organização melhora a leitura e facilita alterações futuras.
+
 ## 5. Algoritmo de troca de valores
 
 ### Ideia principal
@@ -256,6 +313,38 @@ console.log(b); // 10
 
 ### Observação didática
 Esse algoritmo é importante porque aparece em **ordenação**, **reorganização de dados** e vários problemas de **comparação**. No primeiro exemplo, foi usada uma estrutura de dados simples para devolver dois valores ao mesmo tempo, e depois cada valor foi armazenado em sua própria variável. Na opção equivalente, a troca foi mostrada de forma **direta**, usando apenas uma **variável temporária**. O estudo formal de **estruturas de dados** será abordado mais adiante na disciplina.
+
+### Exemplo de uso em um problema maior
+No problema [BEE1046.js](/Users/carubbi/Documents/aulas/T160_T998/beecrowd/BEE1046.js), a solução mais direta calcula a duração do jogo comparando `inicio` e `fim`, sem necessidade de troca. Mesmo assim, o contexto do problema ajuda a visualizar onde o algoritmo de troca pode aparecer como estratégia auxiliar de organização.
+
+#### Ideia ilustrativa
+Se quisermos apenas garantir que o menor horário fique em `inicio` e o maior em `fim`, podemos reutilizar a função `trocarValores` antes de continuar o raciocínio.
+
+```javascript
+let inicio;
+let fim;
+
+function trocarValores() {
+    let aux;
+
+    aux = inicio;
+    inicio = fim;
+    fim = aux;
+}
+
+inicio = parseInt(prompt("Digite a hora inicial:"));
+fim = parseInt(prompt("Digite a hora final:"));
+
+if (inicio > fim) {
+    trocarValores();
+}
+
+console.log("Menor horario: " + inicio);
+console.log("Maior horario: " + fim);
+```
+
+### Ponto de atenção
+Nesse caso, a troca é apenas um **exemplo de aplicação** do algoritmo dentro de um problema maior. Ela **não substitui** a solução principal do `BEE1046`, que continua sendo mais bem resolvida pela comparação direta entre horário inicial e final.
 
 ## 6. Algoritmo de contagem, soma e multiplicação
 
