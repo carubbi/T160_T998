@@ -255,10 +255,10 @@ function converteNum(texto) {
     num = parseFloat(texto);
 
     if (num % 1 === 0) {
-        return parseInt(num);
-    } else {
-        return num;
+        num = parseInt(texto);
     }
+
+    return num;
 }
 
 function validaNota(nota) {
@@ -422,10 +422,10 @@ function converteNum(texto) {
     num = parseFloat(texto);
 
     if (num % 1 === 0) {
-        return parseInt(num);
-    } else {
-        return num;
+        num = parseInt(texto);
     }
+
+    return num;
 }
 
 function buscarMaiorPosicao() {
@@ -695,16 +695,19 @@ function ehPrimo(numero) {
 
     numero = parseInt(numero);
 
+    // Elimina o caso-base: números menores que 2 não são primos
     if (numero < 2) {
         return false;
     }
 
+    // Procura algum divisor além de 1 e do próprio número
     for (divisor = 2; divisor < numero; divisor++) {
         if (numero % divisor == 0) {
             return false;
         }
     }
 
+    // Se nenhum divisor exato apareceu, o número é primo
     return true;
 }
 
@@ -714,17 +717,23 @@ function gerarNPrimeirosPrimos(quantidade) {
     let resposta;
 
     quantidade = parseInt(quantidade);
+
+    // Começa sem nenhum primo encontrado e testa os candidatos a partir de 2
     encontrados = 0;
     candidato = 2;
     resposta = "";
 
+    // Continua testando números até encontrar a quantidade desejada de primos
     while (encontrados < quantidade) {
         if (ehPrimo(candidato)) {
+            // A vírgula só é adicionada a partir do segundo primo encontrado
             if (encontrados > 0) {
                 resposta += ", ";
             }
 
             resposta += candidato;
+            
+            // Atualiza a quantidade de primos já adicionados à resposta
             encontrados++;
         }
 
@@ -740,6 +749,22 @@ quantidade = prompt("Digite quantos números primos deseja gerar:"); // 5
 console.log(gerarNPrimeirosPrimos(quantidade)); // 2, 3, 5, 7, 11
 ```
 
+#### Teste de mesa
+Considerando `quantidade = 5`, o comportamento das variáveis em `gerarNPrimeirosPrimos` será:
+
+| Iteração | `quantidade` | `candidato` | `ehPrimo(candidato)` | `encontrados` | `resposta` |
+| --- | --- | --- | --- | --- | --- |
+| 1ª | 5 | 2 | `true` | 1 | `"2"` |
+| 2ª | 5 | 3 | `true` | 2 | `"2, 3"` |
+| 3ª | 5 | 4 | `false` | 2 | `"2, 3"` |
+| 4ª | 5 | 5 | `true` | 3 | `"2, 3, 5"` |
+| 5ª | 5 | 6 | `false` | 3 | `"2, 3, 5"` |
+| 6ª | 5 | 7 | `true` | 4 | `"2, 3, 5, 7"` |
+| 7ª | 5 | 8 | `false` | 4 | `"2, 3, 5, 7"` |
+| 8ª | 5 | 9 | `false` | 4 | `"2, 3, 5, 7"` |
+| 9ª | 5 | 10 | `false` | 4 | `"2, 3, 5, 7"` |
+| 10ª | 5 | 11 | `true` | 5 | `"2, 3, 5, 7, 11"` |
+
 ### Ponto de atenção
 Esse algoritmo usa decomposição em funções:
 
@@ -747,6 +772,11 @@ Esse algoritmo usa decomposição em funções:
 - outra função usa esse teste para gerar **vários primos**.
 
 Esse é um bom exemplo de **reutilização de código**.
+
+### Observação sobre eficiência
+O algoritmo apresentado é adequado para fins **didáticos**, mas **não é otimizado**. Isso acontece porque, para cada candidato, a função `ehPrimo` testa vários divisores possíveis, o que aumenta o custo da solução quando queremos gerar muitos números primos.
+
+Quando o objetivo é **melhor desempenho**, uma melhoria simples é testar divisores apenas até a raiz quadrada do número (`numero ** 0.5`). Se um número tiver divisor, então ele aparece em um par de fatores, e pelo menos um deles será menor ou igual à raiz quadrada do número. Por exemplo, em `12`, os pares de fatores podem ser `2 x 6` e `3 x 4`. Assim, não é necessário continuar a busca além da raiz quadrada do número.
 
 ## 12. Comparativo rápido dos algoritmos estudados
 
@@ -782,6 +812,137 @@ O ponto central não é apenas memorizar cada algoritmo, mas perceber que muitos
 - **acumulação**;
 - **teste de divisibilidade**;
 - **decomposição em funções**.
+
+## 15. Padrão de estilo a ser adotado
+Segue um guia simples e coerente para essa transição de JavaScript para Java.
+
+### 15.1. Declarar variáveis no início do bloco
+
+Declare as variáveis no começo da função ou do bloco principal.
+
+```javascript
+let encontrados;
+let candidato;
+let resposta;
+```
+
+### 15.2. Inicializar depois
+
+Após a declaração, faça as atribuições iniciais.
+
+```javascript
+encontrados = 0;
+candidato = 2;
+resposta = "";
+```
+
+### 15.3. Usar nomes claros
+
+Prefira nomes que indiquem o papel da variável.
+
+* `contador` ou `cont`
+* `numero` ou `num`
+* `candidato` ou `cand`
+* `resposta` ou `resp`
+* `soma`
+
+Evite nomes pouco descritivos como:
+
+* `x`
+* `y`
+* `a`
+
+### 15.4. Uma instrução por linha
+
+Não juntar muitas ações na mesma linha.
+
+Correto:
+
+```javascript
+soma += numero;
+contador++;
+```
+
+Evitar:
+
+```javascript
+soma += numero; contador++;
+```
+
+### 15.5. Indentação consistente
+
+Usar sempre a mesma indentação dentro de blocos.
+
+```javascript
+if (numero % 2 == 0) {
+    console.log("Par");
+}
+```
+
+### 15.6. Blocos sempre com chaves
+
+Mesmo quando houver apenas um comando, usar chaves.
+
+```javascript
+if (numero > 0) {
+    contador++;
+}
+```
+
+### 15.7. Separar declaração, processamento e saída
+
+Organizar o código em partes bem visíveis.
+
+```javascript
+let numero;
+let dobro;
+
+numero = parseInt(prompt("Digite um número:"));
+dobro = numero * 2;
+console.log(dobro);
+```
+
+### 15.8. Comentários curtos e úteis
+
+Comentar apenas quando ajudar a entender a lógica.
+
+```javascript
+// Conta quantos primos já foram encontrados
+encontrados++;
+```
+
+### 15.9. Funções com objetivo bem definido
+
+Cada função deve ter uma responsabilidade clara.
+
+* `ehPrimo(numero)` verifica primalidade
+* `gerarNPrimeirosPrimos(quantidade)` gera a sequência
+
+### 15.10. Manter a lógica explícita
+
+Para fins didáticos, preferir código mais claro em vez de versões mais compactas.
+
+### Observação didática
+
+Esse padrão não é o mais moderno em JavaScript, mas é muito útil no ensino inicial porque:
+
+* aproxima o aluno do estilo usado em Java
+* reforça a distinção entre declaração e inicialização
+* deixa a estrutura do algoritmo mais visível
+
+### Resumo
+
+Padrão de código da disciplina:
+
+1. Declarar variáveis no início da função.
+2. Inicializar as variáveis depois da declaração.
+3. Usar nomes claros e descritivos.
+4. Manter uma instrução por linha.
+5. Usar indentação consistente.
+6. Usar chaves em estruturas de decisão e repetição.
+7. Organizar o código em entrada, processamento e saída.
+8. Escrever funções com responsabilidade bem definida.
+9. Priorizar clareza da lógica.
 
 ## Saiba mais
 - MDN - Functions: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Functions
