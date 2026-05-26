@@ -1,7 +1,7 @@
 // Aula 10 - Exemplo 1 (troca de posicoes)
 
-function trocarValores(arr) {
-    [arr[0], arr[arr.length - 1]] = [arr[arr.length - 1], arr[0]];
+function trocarValores(arr, idx1, idx2) {
+    [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
 }
 
 // Declaracao de variaveis
@@ -27,7 +27,7 @@ console.log("Antes da troca:");
 console.log(valores);
 
 // Processamento: troca primeiro com ultimo
-trocarValores(valores);
+trocarValores(valores, 0, valores.length - 1);
 
 // Saida depois da troca
 console.log("Depois da troca:");
