@@ -90,8 +90,7 @@ Para manter os códigos curtos e legíveis, usaremos nomes de variáveis simples
 | `dados` | dados separados depois do `split(" ")` |
 | `valores` | vetor com os números que serão processados em alguns exemplos gerais |
 | `vetor` | vetor principal usado nos exemplos |
-| `vetorInvertido` | vetor usado para guardar uma versão invertida sem alterar o vetor original |
-| `vetorFuncao` | cópia usada para aplicar a função de inversão sem depender do vetor já modificado |
+| `copia` | cópia simples usada quando queremos preservar o vetor original |
 | `vetorOrdenado` | vetor usado para guardar uma versão ordenada |
 | `valor` | número convertido a partir de um item textual |
 | `valorBusca` | valor procurado nos exemplos de busca linear |
@@ -280,57 +279,27 @@ Portanto, em vetor par, o `meio` não representa um elemento central. Ele repres
 let entrada;
 let dados;
 let vetor;
-let vetorInvertido;
-let vetorFuncao;
+let copia;
 let valor;
-let n;
-let meio;
 let i;
-let j;
 
-// Entrada de dados
-entrada = prompt("Digite os valores separados por espaco:"); // 12 45 7 89 23
+function inverterComOutroVetor(arr) {
+    let invertido;
+    let i;
+    let j;
 
-// Processamento: separa a entrada em itens textuais
-dados = entrada.split(" ");
+    invertido = [];
+    j = 0;
 
-// Inicialização dos vetores
-vetor = [];
-vetorFuncao = [];
+    for (i = arr.length - 1; i >= 0; i--) {
+        invertido[j] = arr[i];
+        j++;
+    }
 
-// Conversão dos dados textuais e preenchimento dos vetores
-for (i = 0; i < dados.length; i++) {
-    valor = parseInt(dados[i]);
-
-    vetor[i] = valor;
-    vetorFuncao[i] = valor;
+    return invertido;
 }
 
-console.log(`Vetor original: ${vetor}`);
-
-// Abordagem 1: criar outro vetor, preenchendo do fim para o começo
-vetorInvertido = [];
-j = 0;
-
-for (i = vetor.length - 1; i >= 0; i--) {
-    vetorInvertido[j] = vetor[i];
-    j++;
-}
-
-console.log(`Vetor invertido em outro vetor: ${vetorInvertido}`);
-
-// Abordagem 2: inverter o próprio vetor usando o meio como limite
-n = vetor.length; // Tamanho do vetor
-meio = parseInt(n / 2); // Posição no meio do vetor
-
-for (i = 0; i < meio; i++) {
-    [vetor[i], vetor[n - 1 - i]] = [vetor[n - 1 - i], vetor[i]]; // inplace
-}
-
-console.log(`Vetor invertido no proprio vetor: ${vetor}`);
-
-// Usando uma função
-function inverterVetor(arr) {
+function inverterNoProprioVetor(arr) {
     let n;
     let meio;
     let i;
@@ -341,12 +310,30 @@ function inverterVetor(arr) {
     for (i = 0; i < meio; i++) {
         [arr[i], arr[n - 1 - i]] = [arr[n - 1 - i], arr[i]];
     }
-
-    return arr;
 }
 
-// Aplicação
-console.log(`Vetor invertido com função: ${inverterVetor(vetorFuncao)}`);
+// Entrada de dados
+entrada = prompt("Digite os valores separados por espaco:"); // 12 45 7 89 23
+
+// Processamento: separa a entrada em itens textuais
+dados = entrada.split(" ");
+
+// Inicialização dos vetores
+vetor = [];
+copia = [];
+
+// Conversão dos dados textuais e preenchimento dos vetores
+for (i = 0; i < dados.length; i++) {
+    valor = parseInt(dados[i]);
+
+    vetor[i] = valor;
+    copia[i] = valor;
+}
+
+console.log(`Vetor original: ${vetor}`);
+console.log(`Invertido em outro vetor: ${inverterComOutroVetor(vetor)}`);
+inverterNoProprioVetor(copia);
+console.log(`Invertido no proprio vetor: ${copia}`);
 ```
 
 ### Observação sobre a troca com `aux`
@@ -463,14 +450,14 @@ for (i = 0; i < dados.length; i++) {
 
 // Busca linear com parada antecipada
 for (i = 0; i < valores.length; i++) {
-    if (valores[i] === valorBusca) {
+    if (valores[i] == valorBusca) {
         indice = i;
         break;
     }
 }
 
 // Saída
-if (indice !== -1) {
+if (indice != -1) {
     console.log("Valor encontrado no indice " + indice);
 } else {
     console.log("Valor nao encontrado");
@@ -512,7 +499,7 @@ function buscaLinear(valores, valorBusca) {
     indice = -1;
 
     for (i = 0; i < valores.length; i++) {
-        if (valores[i] === valorBusca) {
+        if (valores[i] == valorBusca) {
             indice = i;
             break;
         }
@@ -655,7 +642,7 @@ indice = -1;
 while (inicio <= fim) {
     meio = parseInt((inicio + fim) / 2);
 
-    if (alvo === vetor[meio]) {
+    if (alvo == vetor[meio]) {
         indice = meio;
         break;
     } else if (alvo > vetor[meio]) {
@@ -666,7 +653,7 @@ while (inicio <= fim) {
 }
 
 // Saída
-if (indice !== -1) {
+if (indice != -1) {
     console.log("Valor encontrado no indice " + indice);
 } else {
     console.log("Valor nao encontrado");
@@ -691,7 +678,7 @@ function buscaBinaria(vetor, alvo) {
     while (inicio <= fim) {
         meio = parseInt((inicio + fim) / 2);
 
-        if (alvo === vetor[meio]) {
+        if (alvo == vetor[meio]) {
             return meio;
         } else if (alvo > vetor[meio]) {
             inicio = meio + 1;
@@ -969,11 +956,30 @@ console.log(vetor);
 
 ### Versão com função
 
+Esta função ordena o próprio vetor recebido.
+
+Quando chamamos:
+
+```javascript
+bubbleSort(vetor);
+```
+
+o parâmetro `arr` passa a ser o nome usado dentro da função para trabalhar com esse mesmo vetor.
+
+Isso significa que a função não cria outro vetor automaticamente. Quando alteramos `arr[j]` ou `arr[j + 1]`, estamos alterando posições do vetor recebido.
+
+Por isso, depois da chamada da função, usamos:
+
+```javascript
+console.log(vetor);
+```
+
+O vetor exibido já estará ordenado.
+
 ```javascript
 let entrada;
 let dados;
 let vetor;
-let vetorOrdenado;
 let i;
 
 function bubbleSort(arr) {
@@ -995,8 +1001,6 @@ function bubbleSort(arr) {
             break;
         }
     }
-
-    return arr;
 }
 
 // Entrada
@@ -1013,9 +1017,9 @@ for (i = 0; i < dados.length; i++) {
     vetor[i] = parseInt(dados[i]);
 }
 
-vetorOrdenado = bubbleSort(vetor);
+bubbleSort(vetor);
 
-console.log(vetorOrdenado);
+console.log(vetor);
 ```
 
 ### Explicação dos laços
@@ -1157,7 +1161,7 @@ console.log("Vetor ordenado:");
 console.log(vetorOrdenado);
 
 // Saída da busca
-if (indice !== -1) {
+if (indice != -1) {
     console.log("Valor encontrado no indice " + indice + " do vetor ordenado");
 } else {
     console.log("Valor nao encontrado");
@@ -1230,73 +1234,7 @@ Para esta aula:
 12. Esquecer de converter os valores de texto para número depois do `split`.
 13. Esquecer que, nos exemplos de busca desta aula, o valor procurado é lido em um `prompt` separado e não faz parte do vetor.
 
-## 19. Exercícios em sala
-
-### Exercício 1: troca de posições
-
-Leia vários números inteiros separados por espaço. Troque o primeiro valor com o último valor e exiba o vetor depois da troca.
-
-Não use método pronto para trocar os valores.
-
-### Exercício 2: reversão de vetor
-
-Leia vários números inteiros separados por espaço e exiba os valores na ordem inversa usando troca de posições.
-
-Não use método pronto para inverter o vetor.
-
-### Exercício 3: busca linear
-
-Leia vários números inteiros separados por espaço. Depois, leia em outro `prompt` o valor procurado. Informe se esse valor existe no vetor.
-
-Exemplo de entrada:
-
-```text
-Valores do vetor: 12 45 7 89 23
-Valor procurado: 7
-```
-
-Saída esperada:
-
-```text
-Valor encontrado
-```
-
-### Exercício 4: busca linear com índice
-
-Leia vários números inteiros separados por espaço. Depois, leia em outro `prompt` o valor procurado. Informe o índice em que esse número aparece pela primeira vez no vetor. Se não existir, exiba `Valor nao encontrado`.
-
-Use o exemplo de busca linear apresentado na aula.
-
-### Exercício 5: busca binária
-
-Leia valores em ordem crescente. Depois, leia em outro `prompt` o valor procurado. Use busca binária para informar se o valor existe no vetor.
-
-### Exercício 6: ordenação crescente
-
-Leia vários números inteiros separados por espaço e exiba os valores em ordem crescente usando o método da bolha.
-
-Não use método pronto para ordenar o vetor.
-
-### Exercício 7: Bubble Sort com contadores
-
-Leia vários números inteiros separados por espaço. Ordene o vetor usando o método da bolha e informe:
-
-- o vetor original;
-- o vetor ordenado;
-- o total de comparações;
-- o total de trocas.
-
-### Exercício 8: ordenar e buscar
-
-Leia valores desordenados. Depois, leia em outro `prompt` o valor procurado. Ordene o vetor usando o método da bolha e depois procure o valor usando busca binária.
-
-Ao final, exiba:
-
-- o vetor ordenado;
-- se o valor foi encontrado;
-- o índice no vetor ordenado.
-
-## 20. Fechamento
+## 19. Fechamento
 
 Nesta aula, você estudou técnicas clássicas com vetores:
 
