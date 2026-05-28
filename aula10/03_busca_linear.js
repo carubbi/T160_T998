@@ -1,13 +1,14 @@
 // Aula 10 - Exemplo 3 (busca linear)
 
-function buscaLinear(valores, valorBusca) {
+// Retorna o indice do valor no vetor, ou -1 se nao encontrar.
+function buscaLinear(arr, alvo) {
     let i;
     let indice;
 
     indice = -1;
 
-    for (i = 0; i < valores.length; i++) {
-        if (valores[i] == valorBusca) {
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i] == alvo) {
             indice = i;
             break;
         }
@@ -20,13 +21,13 @@ function buscaLinear(valores, valorBusca) {
 let entrada;
 let dados;
 let valores;
-let valorBusca;
+let valorProcurado;
 let indice;
 let i;
 
 // Entrada
 entrada = prompt("Digite os valores separados por espaco:"); // 12 45 7 89 23
-valorBusca = parseInt(prompt("Digite o valor procurado:")); // 7
+valorProcurado = parseInt(prompt("Digite o valor procurado:")); // 7
 
 // Processamento
 dados = entrada.split(" ");
@@ -36,7 +37,7 @@ for (i = 0; i < dados.length; i++) {
     valores[i] = parseInt(dados[i]);
 }
 
-indice = buscaLinear(valores, valorBusca);
+indice = buscaLinear(valores, valorProcurado);
 
 // Saida
 if (indice != -1) {

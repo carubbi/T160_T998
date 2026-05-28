@@ -1,5 +1,6 @@
 // Aula 10 - Exemplo 6 (ordenar e buscar)
 
+// Ordena o vetor no proprio lugar pelo metodo da bolha.
 function bubbleSort(arr) {
     let i;
     let j;
@@ -21,20 +22,21 @@ function bubbleSort(arr) {
     }
 }
 
-function buscaBinaria(vetor, alvo) {
+// Retorna o indice do alvo no vetor ordenado, ou -1 se nao encontrar.
+function buscaBinaria(arr, alvo) {
     let inicio;
     let fim;
     let meio;
 
     inicio = 0;
-    fim = vetor.length - 1;
+    fim = arr.length - 1;
 
     while (inicio <= fim) {
         meio = parseInt((inicio + fim) / 2);
 
-        if (alvo == vetor[meio]) {
+        if (alvo == arr[meio]) {
             return meio;
-        } else if (alvo > vetor[meio]) {
+        } else if (alvo > arr[meio]) {
             inicio = meio + 1;
         } else {
             fim = meio - 1;
@@ -50,13 +52,13 @@ let dados;
 let vetor;
 let vetorOrdenado;
 let valor;
-let alvo;
+let valorProcurado;
 let indice;
 let i;
 
 // Entrada
 entrada = prompt("Digite os valores separados por espaco:"); // 12 45 7 89 23
-alvo = parseInt(prompt("Digite o valor procurado:")); // 45
+valorProcurado = parseInt(prompt("Digite o valor procurado:")); // 45
 
 // Processamento
 dados = entrada.split(" ");
@@ -72,7 +74,7 @@ for (i = 0; i < dados.length; i++) {
 }
 
 bubbleSort(vetorOrdenado);
-indice = buscaBinaria(vetorOrdenado, alvo);
+indice = buscaBinaria(vetorOrdenado, valorProcurado);
 
 // Saida
 console.log("Vetor original: " + vetor);

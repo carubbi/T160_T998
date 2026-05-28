@@ -1,5 +1,6 @@
 // Aula 10 - Exemplo 5 (bubble sort)
 
+// Ordena o vetor no proprio lugar e conta comparacoes e trocas.
 function bubbleSort(arr) {
     let i;
     let j;

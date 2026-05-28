@@ -88,13 +88,14 @@ Para manter os códigos curtos e legíveis, usaremos nomes de variáveis simples
 | --- | --- |
 | `entrada` | texto digitado pelo usuário em uma única entrada |
 | `dados` | dados separados depois do `split(" ")` |
+| `arr` | parâmetro que representa um vetor recebido por uma função |
 | `valores` | vetor com os números que serão processados em alguns exemplos gerais |
 | `vetor` | vetor principal usado nos exemplos |
 | `copia` | cópia simples usada quando queremos preservar o vetor original |
 | `vetorOrdenado` | vetor usado para guardar uma versão ordenada |
 | `valor` | número convertido a partir de um item textual |
-| `valorBusca` | valor procurado nos exemplos de busca linear |
-| `alvo` | valor procurado nos exemplos de busca binária |
+| `valorProcurado` | valor lido no programa principal para ser buscado |
+| `alvo` | parâmetro que representa o valor procurado dentro de uma função de busca |
 | `indice` | índice em que o valor foi encontrado |
 | `n` | tamanho do vetor em alguns exemplos |
 | `meio` | valor usado como limite na inversão ou como índice central na busca binária |
@@ -230,7 +231,8 @@ Na abordagem que cria outro vetor:
 
 - o vetor original continua igual;
 - precisamos criar outro vetor para guardar o resultado;
-- o código costuma ser mais fácil de entender no início.
+- o código costuma ser mais fácil de entender no início;
+- podemos percorrer o vetor original do começo para o fim e preencher o novo vetor de trás para frente.
 
 Na abordagem que troca os elementos no próprio vetor:
 
@@ -283,23 +285,23 @@ let copia;
 let valor;
 let i;
 
-function inverterComOutroVetor(arr) {
+function criarVetorInvertido(arr) {
     let invertido;
     let i;
     let j;
 
     invertido = [];
-    j = 0;
+    j = arr.length - 1;
 
-    for (i = arr.length - 1; i >= 0; i--) {
+    for (i = 0; i < arr.length; i++) {
         invertido[j] = arr[i];
-        j++;
+        j--;
     }
 
     return invertido;
 }
 
-function inverterNoProprioVetor(arr) {
+function inverterNoMesmoVetor(arr) {
     let n;
     let meio;
     let i;
@@ -331,8 +333,8 @@ for (i = 0; i < dados.length; i++) {
 }
 
 console.log(`Vetor original: ${vetor}`);
-console.log(`Invertido em outro vetor: ${inverterComOutroVetor(vetor)}`);
-inverterNoProprioVetor(copia);
+console.log(`Invertido em outro vetor: ${criarVetorInvertido(vetor)}`);
+inverterNoMesmoVetor(copia);
 console.log(`Invertido no proprio vetor: ${copia}`);
 ```
 
@@ -428,13 +430,13 @@ Quando o valor é encontrado, o algoritmo guarda o índice em que ele apareceu e
 let entrada;
 let dados;
 let valores;
-let valorBusca;
+let valorProcurado;
 let indice;
 let i;
 
 // Entrada
 entrada = prompt("Digite os valores separados por espaco:"); // 12 45 7 89 23
-valorBusca = parseInt(prompt("Digite o valor procurado:")); // 7
+valorProcurado = parseInt(prompt("Digite o valor procurado:")); // 7
 
 // Processamento: separa a entrada em itens textuais
 dados = entrada.split(" ");
@@ -450,7 +452,7 @@ for (i = 0; i < dados.length; i++) {
 
 // Busca linear com parada antecipada
 for (i = 0; i < valores.length; i++) {
-    if (valores[i] == valorBusca) {
+    if (valores[i] == valorProcurado) {
         indice = i;
         break;
     }
@@ -492,14 +494,14 @@ Também podemos separar a busca linear em uma função.
 Essa organização deixa o código mais modular: a função recebe o vetor e o valor procurado, realiza a busca e devolve o índice encontrado.
 
 ```javascript
-function buscaLinear(valores, valorBusca) {
+function buscaLinear(arr, alvo) {
     let i;
     let indice;
 
     indice = -1;
 
-    for (i = 0; i < valores.length; i++) {
-        if (valores[i] == valorBusca) {
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i] == alvo) {
             indice = i;
             break;
         }
@@ -512,7 +514,7 @@ function buscaLinear(valores, valorBusca) {
 Uso da função:
 
 ```javascript
-indice = buscaLinear(valores, valorBusca);
+indice = buscaLinear(valores, valorProcurado);
 ```
 
 Se a função encontrar o valor, retorna o índice da primeira ocorrência. Se não encontrar, retorna `-1`.
@@ -611,7 +613,7 @@ A cada repetição, o algoritmo calcula o índice do meio da região pesquisada 
 let entrada;
 let dados;
 let vetor;
-let alvo;
+let valorProcurado;
 let inicio;
 let fim;
 let meio;
@@ -620,7 +622,7 @@ let i;
 
 // Entrada
 entrada = prompt("Digite os valores ordenados separados por espaco:"); // 7 12 23 45 89
-alvo = parseInt(prompt("Digite o valor procurado:")); // 45
+valorProcurado = parseInt(prompt("Digite o valor procurado:")); // 45
 
 // Processamento: separa a entrada em itens textuais
 dados = entrada.split(" ");
@@ -642,10 +644,10 @@ indice = -1;
 while (inicio <= fim) {
     meio = parseInt((inicio + fim) / 2);
 
-    if (alvo == vetor[meio]) {
+    if (valorProcurado == vetor[meio]) {
         indice = meio;
         break;
-    } else if (alvo > vetor[meio]) {
+    } else if (valorProcurado > vetor[meio]) {
         inicio = meio + 1;
     } else {
         fim = meio - 1;
@@ -667,20 +669,20 @@ Também podemos separar a busca binária em uma função.
 Essa organização deixa o código mais modular: a função recebe o vetor ordenado e o valor procurado, realiza a busca e devolve o índice encontrado.
 
 ```javascript
-function buscaBinaria(vetor, alvo) {
+function buscaBinaria(arr, alvo) {
     let inicio;
     let fim;
     let meio;
 
     inicio = 0;
-    fim = vetor.length - 1;
+    fim = arr.length - 1;
 
     while (inicio <= fim) {
         meio = parseInt((inicio + fim) / 2);
 
-        if (alvo == vetor[meio]) {
+        if (alvo == arr[meio]) {
             return meio;
-        } else if (alvo > vetor[meio]) {
+        } else if (alvo > arr[meio]) {
             inicio = meio + 1;
         } else {
             fim = meio - 1;
@@ -694,7 +696,7 @@ function buscaBinaria(vetor, alvo) {
 Uso da função:
 
 ```javascript
-indice = buscaBinaria(vetor, alvo);
+indice = buscaBinaria(vetor, valorProcurado);
 ```
 
 Se a função encontrar o valor, retorna o índice em que ele aparece no vetor ordenado. Se não encontrar, retorna `-1`.
@@ -703,8 +705,8 @@ Se a função encontrar o valor, retorna o índice em que ele aparece no vetor o
 
 | Variável | Papel no algoritmo |
 | --- | --- |
-| `vetor` | vetor ordenado em que a busca será realizada |
-| `alvo` | valor procurado no vetor |
+| `arr` | vetor ordenado recebido pela função |
+| `alvo` | valor procurado no vetor dentro da função |
 | `inicio` | primeiro índice da região ainda pesquisada |
 | `fim` | último índice da região ainda pesquisada |
 | `meio` | índice central entre `inicio` e `fim` |
@@ -874,6 +876,8 @@ let dados;
 let vetor;
 let i;
 let j;
+let atual;
+let vizinho;
 
 // Entrada
 entrada = prompt("Digite os valores separados por espaco:"); // 20 35 18 8 14 41 3 39
@@ -895,8 +899,11 @@ console.log(vetor);
 // Ordenação por troca - método da bolha
 for (i = 0; i < vetor.length - 1; i++) {
     for (j = 0; j < vetor.length - 1 - i; j++) {
-        if (vetor[j] > vetor[j + 1]) {
-            [vetor[j], vetor[j + 1]] = [vetor[j + 1], vetor[j]];
+        atual = j;
+        vizinho = j + 1;
+
+        if (vetor[atual] > vetor[vizinho]) {
+            [vetor[atual], vetor[vizinho]] = [vetor[vizinho], vetor[atual]];
         }
     }
 }
@@ -1119,7 +1126,7 @@ Agora podemos conectar as duas ideias:
 Como os algoritmos já foram explicados anteriormente, aqui o foco é combinar as funções já estudadas:
 
 - `bubbleSort(vetor)`: ordena o vetor em ordem crescente;
-- `buscaBinaria(vetor, alvo)`: procura o valor em um vetor ordenado.
+- `buscaBinaria(vetor, valorProcurado)`: procura o valor em um vetor ordenado.
 
 Para executar o exemplo abaixo, mantenha essas duas funções declaradas antes deste código.
 
@@ -1129,13 +1136,13 @@ let dados;
 let vetor;
 let vetorOrdenado;
 let valor;
-let alvo;
+let valorProcurado;
 let i;
 let indice;
 
 // Entrada
 entrada = prompt("Digite os valores separados por espaco:"); // 12 45 7 89 23
-alvo = parseInt(prompt("Digite o valor procurado:")); // 45
+valorProcurado = parseInt(prompt("Digite o valor procurado:")); // 45
 
 // Processamento: separa a entrada em itens textuais
 dados = entrada.split(" ");
@@ -1154,7 +1161,7 @@ for (i = 0; i < dados.length; i++) {
 
 // Ordena primeiro, depois busca
 bubbleSort(vetorOrdenado);
-indice = buscaBinaria(vetorOrdenado, alvo);
+indice = buscaBinaria(vetorOrdenado, valorProcurado);
 
 // Saída do vetor ordenado
 console.log("Vetor ordenado:");

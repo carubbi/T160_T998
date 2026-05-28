@@ -1,5 +1,6 @@
 // Aula 10 - Exemplo 1 (troca de posicoes)
 
+// Troca dois valores de posicao no vetor.
 function trocarValores(arr, idx1, idx2) {
     [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
 }
@@ -7,7 +8,7 @@ function trocarValores(arr, idx1, idx2) {
 // Declaracao de variaveis
 let entrada;
 let dados;
-let valores;
+let vetor;
 let i;
 
 // Entrada
@@ -16,19 +17,19 @@ entrada = prompt("Digite os valores separados por espaco:"); // 12 45 7 89 23
 // Processamento
 dados = entrada.split(" ");
 
-valores = [];
+vetor = [];
 
 for (i = 0; i < dados.length; i++) {
-    valores[i] = parseInt(dados[i]);
+    vetor[i] = parseInt(dados[i]);
 }
 
 // Saida antes da troca
 console.log("Antes da troca:");
-console.log(valores);
+console.log(vetor);
 
 // Processamento: troca primeiro com ultimo
-trocarValores(valores, 0, valores.length - 1);
+trocarValores(vetor, 0, vetor.length - 1);
 
 // Saida depois da troca
 console.log("Depois da troca:");
-console.log(valores);
+console.log(vetor);
