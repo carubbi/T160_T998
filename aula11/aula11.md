@@ -53,6 +53,16 @@ Uma **matriz** é uma estrutura organizada em **linhas** e **colunas**.
 
 Podemos pensar em uma matriz como uma tabela.
 
+Na Matemática, matrizes costumam ser representadas entre parênteses ou colchetes, com seus elementos organizados em linhas e colunas.
+
+<img src="imgs/matriz_matematica.png" width="400">
+
+**Figura 11.1** - Representação matemática de uma matriz. Fonte: IME-USP.
+
+Na programação, a ideia visual é a mesma: continuamos pensando em linhas e colunas. A diferença é que, em JavaScript, vamos representar essa estrutura usando arrays.
+
+Outro ponto importante é a indexação. Na Matemática, é comum falar em primeira linha e primeira coluna. Em JavaScript, os índices começam em `0`, então a primeira linha é a linha `0` e a primeira coluna é a coluna `0`.
+
 Exemplo:
 
 | | Coluna 0 | Coluna 1 | Coluna 2 |
@@ -930,7 +940,7 @@ O problema `1181 - Linha na Matriz` é adequado para praticar matrizes porque pe
 
 <img src="imgs/BEE_1181.png" width="400">
 
-**Figura 11.1** - Enunciado do Beecrowd 1181 - Linha na Matriz.
+**Figura 11.2** - Enunciado do Beecrowd 1181 - Linha na Matriz.
 
 Na adaptação didática desta aula, os valores da matriz podem ser lidos em uma única entrada, todos separados por espaço.
 
@@ -1013,7 +1023,7 @@ O problema `1187 - Área Superior` é mais difícil que o `1181`.
 
 <img src="imgs/BEE _187.png" width="400">
 
-**Figura 11.2** - Enunciado do Beecrowd 1187 - Área Superior.
+**Figura 11.3** - Enunciado do Beecrowd 1187 - Área Superior.
 
 Ele exige selecionar uma região específica da matriz usando condições sobre os índices.
 
