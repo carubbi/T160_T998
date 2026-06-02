@@ -454,6 +454,65 @@ Solução de referência:
 
 - `09_beecrowd_1187.js`
 
+## 13. Exercícios complementares resolvidos
+
+Os exercícios abaixo são complementares. Eles devem ser estudados depois dos exercícios principais da aula.
+
+### 13.1 Transposta de uma matriz
+
+Crie uma função chamada `calcularTransposta`.
+
+A função deve receber uma matriz e retornar sua transposta.
+
+Exemplo:
+
+```text
+Matriz original:
+1 2 3
+4 5 6
+
+Matriz transposta:
+1 4
+2 5
+3 6
+```
+
+Solução de referência:
+
+- `13_transposta_matriz.js`
+
+### 13.2 Multiplicação de matrizes
+
+Crie uma função chamada `multiplicarMatrizes`.
+
+A função deve receber duas matrizes e retornar o resultado da multiplicação.
+
+Use como exemplo:
+
+```javascript
+a = [
+    [1, 2, 3],
+    [4, 5, 6]
+];
+
+b = [
+    [7, 8],
+    [9, 10],
+    [11, 12]
+];
+```
+
+Resultado esperado:
+
+```text
+58 64
+139 154
+```
+
+Solução de referência:
+
+- `14_multiplicacao_matrizes.js`
+
 ## Progressão sugerida
 
 Para estudar, resolva nesta ordem:
@@ -465,6 +524,7 @@ Para estudar, resolva nesta ordem:
 5. Exercício 10 para treinar indexação visual.
 6. Beecrowd 1181.
 7. Beecrowd 1187 como desafio.
+8. Exercícios complementares de transposta e multiplicação.
 
 ## Fontes
 

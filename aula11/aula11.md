@@ -1094,7 +1094,117 @@ if (operacao == "S") {
 }
 ```
 
-## 16. Erros comuns
+## 16. Exercícios complementares resolvidos
+
+Os exercícios desta seção são complementares. Eles exigem mais atenção aos índices e devem ser estudados depois que o percurso básico de matriz estiver consolidado.
+
+### 16.1 Função para calcular a transposta
+
+A **transposta** de uma matriz troca linhas por colunas.
+
+Exemplo:
+
+```text
+Matriz original:
+1 2 3
+4 5 6
+
+Matriz transposta:
+1 4
+2 5
+3 6
+```
+
+Se o elemento original está em:
+
+```javascript
+matriz[i][j]
+```
+
+Na transposta, ele passa para:
+
+```javascript
+transposta[j][i]
+```
+
+Solução:
+
+```javascript
+function calcularTransposta(matriz) {
+    let transposta;
+    let i;
+    let j;
+
+    transposta = [];
+
+    for (j = 0; j < matriz[0].length; j++) {
+        transposta[j] = [];
+
+        for (i = 0; i < matriz.length; i++) {
+            transposta[j][i] = matriz[i][j];
+        }
+    }
+
+    return transposta;
+}
+```
+
+### 16.2 Função para multiplicar matrizes
+
+A multiplicação de matrizes só é possível quando:
+
+```text
+número de colunas da primeira matriz = número de linhas da segunda matriz
+```
+
+Exemplo:
+
+```text
+A = 2x3
+B = 3x2
+Resultado = 2x2
+```
+
+Cada elemento do resultado é calculado pela soma dos produtos entre uma linha da primeira matriz e uma coluna da segunda.
+
+Solução:
+
+```javascript
+function multiplicarMatrizes(a, b) {
+    let resultado;
+    let i;
+    let j;
+    let k;
+    let soma;
+
+    resultado = [];
+
+    for (i = 0; i < a.length; i++) {
+        resultado[i] = [];
+
+        for (j = 0; j < b[0].length; j++) {
+            soma = 0;
+
+            for (k = 0; k < a[i].length; k++) {
+                soma = soma + a[i][k] * b[k][j];
+            }
+
+            resultado[i][j] = soma;
+        }
+    }
+
+    return resultado;
+}
+```
+
+### Ponto de atenção
+
+Essas funções não usam métodos prontos de JavaScript. O objetivo é mostrar explicitamente:
+
+- como os índices mudam na transposta;
+- como linha, coluna e acumulador se combinam na multiplicação.
+
+## 17. Erros comuns
 
 1. Achar que a primeira linha ou a primeira coluna começa em `1`.
 2. Trocar linha por coluna ao acessar `matriz[i][j]`.
@@ -1107,7 +1217,7 @@ if (operacao == "S") {
 9. Somar valores antes de converter com `parseInt` ou `parseFloat`.
 10. Criar linhas com quantidades diferentes de colunas sem perceber.
 
-## 17. Fechamento
+## 18. Fechamento
 
 Nesta aula, você estudou **matrizes**, que são arrays organizados em duas dimensões.
 
@@ -1123,7 +1233,7 @@ Os pontos principais foram:
 - a leitura pode ser feita em uma única entrada com `split(" ")`;
 - os algoritmos de soma, média, maior valor e busca seguem a mesma lógica dos vetores, mas com dois índices.
 
-Técnicas como diagonal principal, diagonal secundária, transposta e multiplicação de matrizes exigem mais cuidado com padrões de índices. Elas podem ser estudadas depois que o percurso básico de matriz estiver consolidado.
+Técnicas como diagonal principal e diagonal secundária exigem mais cuidado com padrões de índices. Elas podem ser estudadas depois que o percurso básico de matriz estiver consolidado.
 
 ## Saiba mais
 
