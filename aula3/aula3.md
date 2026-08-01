@@ -1,4 +1,4 @@
-<img src="../imgs/UNIFOR_logo1b.png" width="400"> 
+<img src="../imgs/UNIFOR_logo1b.png" width="400">
 
 # Raciocínio Lógico Algorítmico
 Orientador: Prof. Me Ricardo Carubbi
@@ -12,21 +12,29 @@ Compreender como representar dados em algoritmos e aplicar operadores para const
 Variáveis são espaços de memória usados para armazenar valores que podem mudar durante a execução de um algoritmo.
 
 Exemplos:
-- `let idade = 20;`
-- `let media = 8.5;`
-- `const nome = "Ana";`
+
+```typescript
+let idade: number;
+let media: number;
+let nome: string;
+
+idade = 20;
+media = 8.5;
+nome = "Ana";
+```
 
 Boas práticas:
 - usar nomes claros (`quantidadeAlunos`, `notaFinal`);
+- declarar explicitamente o tipo de cada variável;
 - inicializar variáveis antes de usar;
-- preferir `const` por padrão e `let` quando houver mudança de valor;
 - evitar palavras reservadas da linguagem como nome de variável;
 - evitar nomes genéricos como `x`, `y` quando o contexto não for matemático.
 
 #### 1.1 Palavras reservadas (principais)
-Palavras reservadas nao devem ser usadas como identificadores (nome de variavel, funcao, classe etc.).
+Palavras reservadas não devem ser usadas como identificadores, como nomes de
+variáveis ou funções.
 
-Lista principal em JavaScript:
+Principais palavras que aparecerão na disciplina:
 - `let`, `const`, `var`
 - `if`, `else`, `switch`, `case`, `default`
 - `for`, `while`, `do`, `break`, `continue`
@@ -41,17 +49,32 @@ Lista principal em JavaScript:
 ### 2. Tipos de variáveis
 O tipo define quais valores uma variável pode guardar e quais operações são permitidas.
 
-Principais tipos em JavaScript:
+Principais tipos em TypeScript:
 - `number`: inteiros e decimais (`-3`, `0`, `3.14`);
 - `string`: textos (`"Computação"`, `'A'`);
 - `boolean`: `true` ou `false`;
-- `undefined`: valor padrão de variável não inicializada;
+- `undefined`: ausência de um valor definido;
 - `null`: ausência intencional de valor.
 
-Importância em Ciência da Computação:
-- influencia uso de memória;
-- impacta desempenho;
-- evita erros de processamento (ex.: concatenar texto e número sem querer).
+TypeScript usa `number` tanto para inteiros quanto para valores decimais. As
+anotações de tipo ajudam o compilador a identificar operações incompatíveis,
+como multiplicar um texto por um número.
+
+#### 2.1 O tipo `any`
+
+O tipo `any` permite que uma variável receba valores de qualquer tipo e
+desativa a verificação de tipos para aquela variável:
+
+```typescript
+let valor: any;
+
+valor = "dez";
+console.log(valor * 2); // compila, mas produz NaN
+```
+
+> `any` será apresentado para fins de compreensão, mas não será utilizado nos
+> exemplos e exercícios da disciplina. Todas as soluções devem declarar tipos
+> específicos.
 
 ### 3. Operadores
 Operadores permitem manipular e comparar dados.
@@ -109,14 +132,20 @@ Exemplo:
 | `false` | `true`  |
 | `true`  | `false` |
 
-### Exemplo integrado (JavaScript)
-```js
+### Exemplo integrado (TypeScript)
+
+```typescript
+// Declaracao de variaveis
+let idade: number;
+let nota: number;
+let aprovado: boolean;
+
 // Entrada
-const idade = 19;
-const nota = 7.2;
+idade = 19;
+nota = 7.2;
 
 // Processamento
-const aprovado = (idade >= 18) && (nota >= 6.0);
+aprovado = (idade >= 18) && (nota >= 6.0);
 
 // Saída
 console.log(aprovado); // true
@@ -128,8 +157,9 @@ Nesta aula, vimos como:
 2. escolher tipos adequados de dados;
 3. aplicar operadores para criar expressões em algoritmos.
 
-Esses conceitos são base para estruturas de decisão (`if`), repetição (`for`, `while`) e funções em JavaScript.
+Esses conceitos são base para estruturas de decisão (`if`), repetição (`for`,
+`while`) e funções em TypeScript.
 
 ### Saiba mais
-- Documentacao JavaScript (MDN): https://developer.mozilla.org/pt-BR/docs/Web/JavaScript
-- Especificacao ECMAScript (ECMA-262): https://tc39.es/ecma262/
+- Documentação oficial do TypeScript: https://www.typescriptlang.org/docs/
+- Tipos de uso cotidiano: https://www.typescriptlang.org/docs/handbook/2/everyday-types.html

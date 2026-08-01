@@ -1,8 +1,12 @@
+// Declaracao de variaveis
+let num: number;
+let resto: number;
+
 // Entrada
-const num = 13;
+num = 13;
 
 // Processamento
-const resto = num % 2;
+resto = num % 2;
 
 // Saída
 if (resto === 0) {

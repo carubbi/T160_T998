@@ -1,9 +1,9 @@
-<img src="../imgs/UNIFOR_logo1b.png" width="400"> 
+<img src="../imgs/UNIFOR_logo1b.png" width="400">
 
 # Raciocínio Lógico Algorítmico
 Orientador: Prof. Me Ricardo Carubbi
 
-## Exercícios reslvidos
+## Exercícios resolvidos
 
 ### Questão 1
 Represente, em descrição narrativa, fluxograma, pseudocódigo e tabela de testes, um algoritmo para multiplicar dois números e exibir o resultado.
@@ -32,14 +32,21 @@ E --> F([FIM])
 | -4   | 5    | -20       | -20   |
 | 0    | 7    | 0         | 0     |
 
-#### Código JavaScript (Programiz)
+#### Código TypeScript (Programiz)
 
-```javascript
+```typescript
+// Declaracao de variaveis
+let num1: number;
+let num2: number;
+let resultado: number;
+
 // Entrada
-const num1 = 2;
-const num2 = 3;
+num1 = 2;
+num2 = 3;
+
 // Processamento
-const resultado = num1 * num2;
+resultado = num1 * num2;
+
 // Saída
 console.log(resultado);
 ```
@@ -64,19 +71,25 @@ D --> E([FIM])
 
 #### Teste de mesa
 
-| tempC  | tempF | saída                 | 
+| tempC  | tempF | saída                 |
 | --     | --    | --                    |
 | 0      | 32    | 32 graus Fahrenheit   |
 | 10     | 50    | 50 graus Fahrenheit   |
 | -17.78 | 0.00  | 0.00 graus Fahrenheit |
 
-#### Código JavaScript (Programiz)
+#### Código TypeScript (Programiz)
 
-```javascript
+```typescript
+// Declaracao de variaveis
+let tempC: number;
+let tempF: number;
+
 // Entrada
-const tempC = 25;
+tempC = 25;
+
 // Processamento
-const tempF = (9 / 5) * tempC + 32;
+tempF = (9 / 5) * tempC + 32;
+
 // Saída
 console.log(tempF);
 ```
@@ -113,18 +126,23 @@ G --> H
 | 9    | 4.5  | 2         | 2                   |
 | 7    | 0    | -         | "impossível dividir" |
 
-#### Código JavaScript (Programiz)
+#### Código TypeScript (Programiz)
 
-```javascript
+```typescript
+// Declaracao de variaveis
+let num1: number;
+let num2: number;
+let resultado: number;
+
 // Entrada
-const num1 = 10;
-const num2 = 2;
+num1 = 10;
+num2 = 2;
 
 // Processamento e saída
 if (num2 === 0) {
   console.log("impossível dividir");
 } else {
-  const resultado = num1 / num2;
+  resultado = num1 / num2;
   console.log(resultado);
 }
 ```
@@ -155,18 +173,23 @@ F --> G
 #### Teste de mesa
 
 | numero | resto | resto == 0 | saída   |
-| --     | --    | --         | --      | 
+| --     | --    | --         | --      |
 | 0      | 0     | V          | "par"   |
 | 13     | 1     | F          | "impar" |
 | 30     | 0     | V          | "par"   |
 
-#### Código JavaScript (Programiz)
+#### Código TypeScript (Programiz)
 
-```javascript
+```typescript
+// Declaracao de variaveis
+let num: number;
+let resto: number;
+
 // Entrada
-const num = 13;
+num = 13;
+
 // Processamento
-const resto = num % 2;
+resto = num % 2;
 
 // Saída
 if (resto === 0) {
@@ -206,14 +229,20 @@ G --> H
 | 5     | 4     | 4.5   | F          | "Reprovado" |
 | 10    | 9     | 9.5   | V          | "Aprovado"  |
 
-#### Código JavaScript (Programiz)
+#### Código TypeScript (Programiz)
 
-```javascript
+```typescript
+// Declaracao de variaveis
+let nota1: number;
+let nota2: number;
+let media: number;
+
 // Entrada
-const nota1 = 8;
-const nota2 = 6;
+nota1 = 8;
+nota2 = 6;
+
 // Processamento
-const media = (nota1 + nota2) / 2;
+media = (nota1 + nota2) / 2;
 
 // Saída
 if (media >= 7) {

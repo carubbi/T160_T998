@@ -1,49 +1,72 @@
-// Aula 3 - Exemplos de boas praticas, tipos e operadores em JavaScript
+// Aula 3 - Exemplos de boas praticas, tipos e operadores em TypeScript
+
+// Declaracao de variaveis
+let quantidadeAlunos: number;
+let notaFinal: number;
+let totalPresencas: number;
+let curso: string;
+let moduloAtual: number;
+let idadeAluno: number;
+let notaProva: number;
+let numeroInteiro: number;
+let numeroDecimal: number;
+let nomeDisciplina: string;
+let conceito: string;
+let aprovado: boolean;
+let valorIndefinido: undefined;
+let semValor: null;
+let contador: number;
+let idade: number;
+let frequencia: number;
+let nota: number;
+let passouPorMediaEFrequencia: boolean;
+let passouPorNotaOuFrequencia: boolean;
+let naoAprovado: boolean;
 
 console.log('=== 1) Boas praticas ===');
 
 // 1.1 Nomes claros de variaveis
-const quantidadeAlunos = 32;
-const notaFinal = 8.7;
+quantidadeAlunos = 32;
+notaFinal = 8.7;
 console.log('quantidadeAlunos:', quantidadeAlunos);
 console.log('notaFinal:', notaFinal);
 
 // 1.2 Inicializar variaveis antes de usar
-let totalPresencas = 0;
+totalPresencas = 0;
 totalPresencas += 1;
 console.log('totalPresencas:', totalPresencas);
 
-// 1.3 Preferir const por padrao e let quando houver mudanca
-const curso = 'Raciocinio Logico';
-let moduloAtual = 1;
+// 1.3 Atribuir valores compativeis com os tipos declarados
+curso = 'Raciocinio Logico';
+moduloAtual = 1;
 moduloAtual += 1;
 console.log('curso:', curso, '| moduloAtual:', moduloAtual);
 
 // 1.4 Evitar palavras reservadas e nomes genericos sem contexto
 // Exemplo ruim (nao fazer): let if = 10; let x = 5;
 // Exemplo bom:
-const idadeAluno = 19;
-const notaProva = 7.5;
+idadeAluno = 19;
+notaProva = 7.5;
 console.log('idadeAluno:', idadeAluno, '| notaProva:', notaProva);
 
-console.log('\n=== 2) Tipos principais em JavaScript ===');
+console.log('\n=== 2) Tipos principais em TypeScript ===');
 
 // number (inteiros e decimais)
-const numeroInteiro = -3;
-const numeroDecimal = 3.14;
+numeroInteiro = -3;
+numeroDecimal = 3.14;
 
 // string (textos)
-const nomeDisciplina = 'Computacao';
-const conceito = 'A';
+nomeDisciplina = 'Computacao';
+conceito = 'A';
 
 // boolean (true/false)
-const aprovado = true;
+aprovado = true;
 
 // undefined (valor padrao de variavel nao inicializada)
-let valorIndefinido;
+valorIndefinido = undefined;
 
 // null (ausencia intencional de valor)
-const semValor = null;
+semValor = null;
 
 console.log('numeroInteiro:', numeroInteiro, '| tipo:', typeof numeroInteiro);
 console.log('numeroDecimal:', numeroDecimal, '| tipo:', typeof numeroDecimal);
@@ -56,7 +79,7 @@ console.log('semValor:', semValor, '| tipo:', typeof semValor);
 console.log('\n=== 3) Operadores ===');
 
 console.log('\n3.1 Atribuicao');
-let contador = 10;
+contador = 10;
 console.log('contador inicial:', contador);
 
 contador += 5; // 15
@@ -66,7 +89,7 @@ contador /= 3; // 13
 console.log('contador final apos +=, -=, *=, /=:', contador);
 
 console.log('\n3.2 Relacionais / comparacao');
-const idade = 18;
+idade = 18;
 console.log('idade === 18:', idade === 18);
 console.log('idade !== 21:', idade !== 21);
 console.log('idade > 16:', idade > 16);
@@ -75,11 +98,11 @@ console.log('idade >= 18:', idade >= 18);
 console.log('idade <= 17:', idade <= 17);
 
 console.log('\n3.3 Logicos');
-const frequencia = 80;
-const nota = 6.5;
-const passouPorMediaEFrequencia = (nota >= 6.0) && (frequencia >= 75);
-const passouPorNotaOuFrequencia = (nota >= 7.0) || (frequencia >= 85);
-const naoAprovado = !passouPorMediaEFrequencia;
+frequencia = 80;
+nota = 6.5;
+passouPorMediaEFrequencia = (nota >= 6.0) && (frequencia >= 75);
+passouPorNotaOuFrequencia = (nota >= 7.0) || (frequencia >= 85);
+naoAprovado = !passouPorMediaEFrequencia;
 
 console.log('(nota >= 6.0) && (frequencia >= 75):', passouPorMediaEFrequencia);
 console.log('(nota >= 7.0) || (frequencia >= 85):', passouPorNotaOuFrequencia);
