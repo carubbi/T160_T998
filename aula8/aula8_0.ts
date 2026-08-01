@@ -1,63 +1,63 @@
 // Aula 8 - Funcoes e algoritmos classicos
 
-function somar(a, b) {
-  a = parseFloat(a);
-  b = parseFloat(b);
-
+function somar(a: number, b: number): number {
   return a + b;
 }
 
-function mostrarMensagem(nome) {
-  let saudacao;
+function mostrarMensagem(nome: string): void {
+  let saudacao: string;
 
   saudacao = "Ola, " + nome;
   console.log(saudacao);
 }
 
-function calcularDobro(numero) {
-  numero = parseFloat(numero);
-
+function calcularDobro(numero: number): number {
   return numero * 2;
 }
 
-function trocarValores(a, b) {
-  let aux;
+function calcularContagem(n: number): number {
+  let contador: number;
+  let i: number;
 
-  a = parseFloat(a);
-  b = parseFloat(b);
-
-  aux = a;
-  a = b;
-  b = aux;
-
-  return [a, b];
-}
-
-function calcularResumo(n) {
-  let contador;
-  let soma;
-  let produto;
-  let i;
-
-  n = parseInt(n);
   contador = 0;
-  soma = 0;
-  produto = 1;
 
   for (i = 1; i <= n; i++) {
     contador++;
+  }
+
+  return contador;
+}
+
+function calcularSoma(n: number): number {
+  let soma: number;
+  let i: number;
+
+  soma = 0;
+
+  for (i = 1; i <= n; i++) {
     soma = soma + i;
+  }
+
+  return soma;
+}
+
+function calcularProduto(n: number): number {
+  let produto: number;
+  let i: number;
+
+  produto = 1;
+
+  for (i = 1; i <= n; i++) {
     produto = produto * i;
   }
 
-  return [contador, soma, produto];
+  return produto;
 }
 
-function calcularFatorial(n) {
-  let fatorial;
-  let i;
+function calcularFatorial(n: number): number {
+  let fatorial: number;
+  let i: number;
 
-  n = parseInt(n);
   fatorial = 1;
 
   for (i = 1; i <= n; i++) {
@@ -67,14 +67,13 @@ function calcularFatorial(n) {
   return fatorial;
 }
 
-function gerarFibonacci(quantidade) {
-  let a;
-  let b;
-  let proximo;
-  let i;
-  let sequencia;
+function gerarFibonacci(quantidade: number): string {
+  let a: number;
+  let b: number;
+  let proximo: number;
+  let i: number;
+  let sequencia: string;
 
-  quantidade = parseInt(quantidade);
   a = 0;
   b = 1;
   sequencia = "";
@@ -94,13 +93,11 @@ function gerarFibonacci(quantidade) {
   return sequencia;
 }
 
-function decimalParaBinario(numero) {
-  let binario;
-  let resto;
+function decimalParaBinario(numero: number): string {
+  let binario: string;
+  let resto: number;
 
-  numero = parseInt(numero);
-
-  if (numero == 0) {
+  if (numero === 0) {
     return "0";
   }
 
@@ -109,23 +106,21 @@ function decimalParaBinario(numero) {
   while (numero > 0) {
     resto = numero % 2;
     binario = resto + binario;
-    numero = parseInt(numero / 2);
+    numero = Math.trunc(numero / 2);
   }
 
   return binario;
 }
 
-function ehPrimo(numero) {
-  let divisor;
-
-  numero = parseInt(numero);
+function ehPrimo(numero: number): boolean {
+  let divisor: number;
 
   if (numero < 2) {
     return false;
   }
 
   for (divisor = 2; divisor < numero; divisor++) {
-    if (numero % divisor == 0) {
+    if (numero % divisor === 0) {
       return false;
     }
   }
@@ -133,12 +128,11 @@ function ehPrimo(numero) {
   return true;
 }
 
-function gerarNPrimeirosPrimos(quantidade) {
-  let encontrados;
-  let candidato;
-  let resposta;
+function gerarNPrimeirosPrimos(quantidade: number): string {
+  let encontrados: number;
+  let candidato: number;
+  let resposta: string;
 
-  quantidade = parseInt(quantidade);
   encontrados = 0;
   candidato = 2;
   resposta = "";
@@ -159,11 +153,20 @@ function gerarNPrimeirosPrimos(quantidade) {
   return resposta;
 }
 
+// Declaracao de variaveis
+let aluno: string;
+let a: number;
+let b: number;
+let temporaria: number;
+let contadorFinal: number;
+let somaFinal: number;
+let produtoFinal: number;
+
 console.log("=== 1) Funcao basica ===");
 console.log(somar(4, 7));
 
 console.log("\n=== 2) Escopo em funcoes ===");
-let aluno = "Ana";
+aluno = "Ana";
 mostrarMensagem(aluno);
 console.log(aluno);
 
@@ -173,17 +176,18 @@ console.log(calcularDobro(8));
 console.log(calcularDobro(12));
 
 console.log("\n=== 4) Troca de valores ===");
-let novoA = 10;
-let novoB = 25;
-[novoA, novoB] = trocarValores(novoA, novoB);
-console.log(novoA);
-console.log(novoB);
+a = 10;
+b = 25;
+temporaria = a;
+a = b;
+b = temporaria;
+console.log(a);
+console.log(b);
 
 console.log("\n=== 5) Contagem, soma e multiplicacao ===");
-let contadorFinal;
-let somaFinal;
-let produtoFinal;
-[contadorFinal, somaFinal, produtoFinal] = calcularResumo(4);
+contadorFinal = calcularContagem(4);
+somaFinal = calcularSoma(4);
+produtoFinal = calcularProduto(4);
 console.log("Contagem: " + contadorFinal);
 console.log("Soma: " + somaFinal);
 console.log("Produto: " + produtoFinal);
