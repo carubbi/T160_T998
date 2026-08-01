@@ -1,5 +1,11 @@
 // Aula 5 - Conceitos fundamentais: aplicacao correta de estruturas condicionais
 
+// Declaracao de variaveis
+let temperatura: number;
+let nota: number;
+let media: number;
+let dia: number;
+
 console.log('=== 1) Como escolher a estrutura certa ===');
 console.log('if: quando existe acao apenas para o caso verdadeiro.');
 console.log('if...else: quando existem exatamente dois caminhos.');
@@ -7,14 +13,14 @@ console.log('if...else if...else: quando existem tres ou mais condicoes.');
 console.log('switch...case: quando a decisao depende de valores exatos da mesma variavel.');
 
 console.log('\n=== 2) if (condicional simples) ===');
-let temperatura = 32;
+temperatura = 32;
 if (temperatura > 30) {
   console.log('Dia quente');
 }
 console.log('Verificacao concluida');
 
 console.log('\n=== 3) if...else (dois caminhos) ===');
-let nota = 6.5;
+nota = 6.5;
 if (nota >= 7) {
   console.log('Aprovado');
 } else {
@@ -22,7 +28,7 @@ if (nota >= 7) {
 }
 
 console.log('\n=== 4) if...else if...else (multiplas condicoes) ===');
-let media = 8.2;
+media = 8.2;
 if (media >= 9) {
   console.log('Conceito A');
 } else if (media >= 7) {
@@ -34,7 +40,7 @@ if (media >= 9) {
 }
 
 console.log('\n=== 5) switch...case (valor exato) ===');
-let dia = 3;
+dia = 3;
 switch (dia) {
   case 1:
     console.log('Domingo');

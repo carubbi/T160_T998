@@ -1,4 +1,4 @@
-<img src="../imgs/UNIFOR_logo1b.png" width="400"> 
+<img src="../imgs/UNIFOR_logo1b.png" width="400">
 
 # Raciocínio Lógico Algorítmico
 Orientador: Prof. Me Ricardo Carubbi
@@ -6,7 +6,7 @@ Orientador: Prof. Me Ricardo Carubbi
 ## Aula 4: Estruturas Condicionais
 
 ### Objetivo da aula
-Compreender como controlar o fluxo de execução de algoritmos com decisões em JavaScript, usando `if`, `if...else` e operador ternário.
+Compreender como controlar o fluxo de execução de algoritmos com decisões em TypeScript, usando `if`, `if...else` e operador ternário.
 
 ### 1. Controle de fluxo
 Em algoritmos, o fluxo de execução pode seguir três formas principais:
@@ -37,7 +37,7 @@ Exemplos:
 Usada quando existe ação apenas para o caso verdadeiro.
 
 Sintaxe:
-```js
+```typescript
 if (condicao) {
   // executa se condicao for true
 }
@@ -53,12 +53,15 @@ C --> D
 ```
 
 Exemplo prático 1:
-```js
+```typescript
+let entrada: string;
+let valorCompra: number;
+
 // Entrada (sempre chega como texto)
-let valorCompra = prompt("Digite o valor da compra:");
+entrada = prompt("Digite o valor da compra:")!;
 
 // Conversao para numero decimal
-valorCompra = parseFloat(valorCompra);
+valorCompra = parseFloat(entrada);
 
 // Regra: aplica desconto apenas acima de 100
 if (valorCompra > 100) {
@@ -68,6 +71,10 @@ if (valorCompra > 100) {
 // Saida final
 console.log(`Valor final: ${valorCompra}`);
 ```
+
+Neste momento, usamos `!` após `prompt()` para informar ao TypeScript que o
+valor será uma `string`. O tratamento do possível valor `null` será estudado na
+Aula 6.
 
 Fluxograma (Mermaid):
 ```mermaid
@@ -92,7 +99,7 @@ Teste de mesa:
 Usada quando há ação para o caso verdadeiro e para o caso falso.
 
 Sintaxe:
-```js
+```typescript
 if (condicao) {
   // bloco verdadeiro
 } else {
@@ -111,13 +118,16 @@ D --> E
 ```
 
 Exemplo prático 2:
-```js
+```typescript
+let entrada: string;
+let salarioAtual: number;
+let novoSalario: number;
+
 // Entrada
-let salarioAtual = prompt("Digite o salario atual:");
+entrada = prompt("Digite o salario atual:")!;
 
 // Conversao para numero decimal
-salarioAtual = parseFloat(salarioAtual);
-let novoSalario;
+salarioAtual = parseFloat(entrada);
 
 // Regra de negocio por faixa salarial
 if (salarioAtual <= 500) {
@@ -154,7 +164,7 @@ Teste de mesa:
 Usada quando existem mais de duas possibilidades de decisao.
 
 Sintaxe:
-```js
+```typescript
 if (condicao1) {
   // bloco 1
 } else if (condicao2) {
@@ -166,20 +176,24 @@ if (condicao1) {
 
 Exemplo prático: autenticacao de usuario
 
-```js
+```typescript
+let username: string;
+let entradaPassword: string;
+let password: number;
+
 // Entrada de credenciais
-const username = prompt("Digite o usuario:");
-let password = prompt("Digite a senha numerica:");
+username = prompt("Digite o usuario:")!;
+entradaPassword = prompt("Digite a senha numerica:")!;
 
 // Conversao da senha para inteiro
-password = parseInt(password);
+password = parseInt(entradaPassword);
 
 // Regras de autenticacao
-if (username != "usuario123" && password != 123456) {
+if (username !== "usuario123" && password !== 123456) {
     console.log("Login e senha incorretos");
-} else if (username != "usuario123") {
+} else if (username !== "usuario123") {
     console.log("Login incorreto");
-} else if (password != 123456) {
+} else if (password !== 123456) {
     console.log("Senha incorreta");
 } else {
     console.log("Usuario autenticado");
@@ -220,20 +234,24 @@ Teste de mesa:
 Forma resumida para decisões simples em uma linha.
 
 Sintaxe:
-```js
+```typescript
 condicao ? valorSeVerdadeiro : valorSeFalso;
 ```
 
 Exemplo prático 3:
-```js
+```typescript
+let entrada: string;
+let numero: number;
+let resultado: string;
+
 // Entrada
-let numero = prompt("Digite um numero inteiro:");
+entrada = prompt("Digite um numero inteiro:")!;
 
 // Conversao para inteiro
-numero = parseInt(numero);
-/
-/ Regra: resto 0 na divisao por 2 indica numero par
-const resultado = (numero % 2 === 0) ? "Par" : "Impar";
+numero = parseInt(entrada);
+
+// Regra: resto 0 na divisao por 2 indica numero par
+resultado = (numero % 2 === 0) ? "Par" : "Impar";
 
 // Saida
 console.log(`O numero e ${resultado}`);

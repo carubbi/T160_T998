@@ -1,5 +1,8 @@
 // Aula 5 - Exercicio 3 (if...else if...else)
-let media = 8.2;
+// Declaracao de variaveis
+let media: number;
+
+media = 8.2;
 
 if (media >= 9) {
   console.log('Conceito A');

@@ -1,9 +1,13 @@
 // Exemplo 1 - if
+// Declaracao de variaveis
+let entrada: string;
+let valorCompra: number;
+
 // Entrada (sempre chega como texto)
-let valorCompra = prompt("Digite o valor da compra:");
+entrada = prompt("Digite o valor da compra:")!;
 
 // Conversao para numero decimal
-valorCompra = parseFloat(valorCompra);
+valorCompra = parseFloat(entrada);
 
 // Regra: aplica desconto apenas acima de 100
 if (valorCompra > 100) {

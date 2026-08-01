@@ -1,5 +1,8 @@
 // Aula 5 - Exercicio 4 (switch...case)
-let dia = 3;
+// Declaracao de variaveis
+let dia: number;
+
+dia = 3;
 
 switch (dia) {
   case 1:

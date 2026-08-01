@@ -1,4 +1,4 @@
-<img src="../imgs/UNIFOR_logo1b.png" width="400"> 
+<img src="../imgs/UNIFOR_logo1b.png" width="400">
 
 # Raciocínio Lógico Algorítmico
 Orientador: Prof. Me Ricardo Carubbi
@@ -6,7 +6,7 @@ Orientador: Prof. Me Ricardo Carubbi
 ## Aula 5: Aplicacao correta de estruturas condicionais
 
 ### Objetivo da aula
-Identificar e aplicar corretamente cada estrutura condicional em JavaScript: `if`, `if...else`, `if...else if...else` e `switch...case`.
+Identificar e aplicar corretamente cada estrutura condicional em TypeScript: `if`, `if...else`, `if...else if...else` e `switch...case`.
 
 ### 1. Como escolher a estrutura certa
 Use esta regra pratica:
@@ -22,15 +22,17 @@ Quando usar:
 - quando nao e necessario tratar explicitamente o caso falso.
 
 Sintaxe:
-```js
+```typescript
 if (condicao) {
   console.log("Condicao verdadeira");
 }
 ```
 
 Exemplo:
-```js
-let temperatura = 32;
+```typescript
+let temperatura: number;
+
+temperatura = 32;
 
 if (temperatura > 30) {
   console.log("Dia quente");
@@ -45,7 +47,7 @@ Quando usar:
 - para decisoes binarias (sim/nao, aprovado/reprovado, par/impar).
 
 Sintaxe:
-```js
+```typescript
 if (condicao) {
   console.log("Caminho A");
 } else {
@@ -54,8 +56,10 @@ if (condicao) {
 ```
 
 Exemplo:
-```js
-let nota = 6.5;
+```typescript
+let nota: number;
+
+nota = 6.5;
 
 if (nota >= 7) {
   console.log("Aprovado");
@@ -71,7 +75,7 @@ Quando usar:
 - quando so um bloco deve ser executado.
 
 Sintaxe:
-```js
+```typescript
 if (condicao1) {
   console.log("Bloco 1");
 } else if (condicao2) {
@@ -82,8 +86,10 @@ if (condicao1) {
 ```
 
 Exemplo:
-```js
-let media = 8.2;
+```typescript
+let media: number;
+
+media = 8.2;
 
 if (media >= 9) {
   console.log("Conceito A");
@@ -105,7 +111,7 @@ Quando usar:
 - quando ha muitos `else if` comparando igualdade na mesma variavel.
 
 Sintaxe:
-```js
+```typescript
 switch (expressao) {
   case valor1:
     console.log("Bloco 1");
@@ -119,8 +125,10 @@ switch (expressao) {
 ```
 
 Exemplo:
-```js
-let dia = 3;
+```typescript
+let dia: number;
+
+dia = 3;
 
 switch (dia) {
   case 1:

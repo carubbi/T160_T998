@@ -1,10 +1,14 @@
 // Exemplo 2 - if...else
+// Declaracao de variaveis
+let entrada: string;
+let salarioAtual: number;
+let novoSalario: number;
+
 // Entrada
-let salarioAtual = prompt("Digite o salario atual:");
+entrada = prompt("Digite o salario atual:")!;
 
 // Conversao para numero decimal
-salarioAtual = parseFloat(salarioAtual);
-let novoSalario;
+salarioAtual = parseFloat(entrada);
 
 // Regra de negocio por faixa salarial
 if (salarioAtual <= 500) {
