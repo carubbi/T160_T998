@@ -1,13 +1,13 @@
 // Declarar as variáveis
-let entradaA;
-let entradaB;
-let A;
-let B;
-let MEDIA;
+let entradaA: string;
+let entradaB: string;
+let A: number;
+let B: number;
+let MEDIA: number;
 
 // Entrada de dados
-entradaA = prompt('Digite A: ');
-entradaB = prompt('Digite B: ');
+entradaA = prompt('Digite A: ')!;
+entradaB = prompt('Digite B: ')!;
 
 // Processamento dos dados
 A = parseFloat(entradaA);

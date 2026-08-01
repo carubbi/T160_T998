@@ -1,13 +1,13 @@
 // Declarar as variáveis
-let entradaTempo;
-let entradaVelocidade;
-let tempo;
-let velocidade;
-let litros;
+let entradaTempo: string;
+let entradaVelocidade: string;
+let tempo: number;
+let velocidade: number;
+let litros: number;
 
 // Entrada de dados
-entradaTempo = prompt('Digite o tempo gasto: ');
-entradaVelocidade = prompt('Digite a velocidade media: ');
+entradaTempo = prompt('Digite o tempo gasto: ')!;
+entradaVelocidade = prompt('Digite a velocidade media: ')!;
 
 // Processamento dos dados
 tempo = parseInt(entradaTempo);

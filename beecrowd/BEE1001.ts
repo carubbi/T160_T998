@@ -1,13 +1,13 @@
 // Declarar as variáveis
-let entradaA;
-let entradaB;
-let A;
-let B;
-let X;
+let entradaA: string;
+let entradaB: string;
+let A: number;
+let B: number;
+let X: number;
 
 // Entrada de dados
-entradaA = prompt('Digite o valor de A:');
-entradaB = prompt('Digite o valor de B:');
+entradaA = prompt('Digite o valor de A:')!;
+entradaB = prompt('Digite o valor de B:')!;
 
 // Processamento dos dados
 // Converter as entradas (string) para numérico

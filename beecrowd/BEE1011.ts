@@ -1,13 +1,14 @@
 // Declarar as variáveis
-let entradaRaio;
-let raio;
-let volume;
-const PI = 3.14159;
+let entradaRaio: string;
+let raio: number;
+let volume: number;
+let PI: number;
 
 // Entrada de dados
-entradaRaio = prompt('Digite o raio: ');
+entradaRaio = prompt('Digite o raio: ')!;
 
 // Processamento dos dados
+PI = 3.14159;
 raio = parseFloat(entradaRaio);
 volume = (4.0 / 3.0) * PI * raio * raio * raio;
 

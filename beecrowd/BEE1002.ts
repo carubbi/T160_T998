@@ -1,11 +1,11 @@
 // Declarar as variáveis
-let raio;
-let area;
-let entradaRaio;
-let PI;
+let raio: number;
+let area: number;
+let entradaRaio: string;
+let PI: number;
 
 // Entrada de dados
-entradaRaio = prompt('Digite o raio: ');
+entradaRaio = prompt('Digite o raio: ')!;
 
 // Processamento dos dados
 // Definindo o valor de PI

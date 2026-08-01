@@ -1,10 +1,10 @@
 // Declarar as variáveis
-let entradaValor;
-let valor;
-let mensagem;
+let entradaValor: string;
+let valor: number;
+let mensagem: string;
 
 // Entrada de dados
-entradaValor = prompt('Digite o valor: ');
+entradaValor = prompt('Digite o valor: ')!;
 
 // Processamento dos dados
 // Converter a entrada para um número de ponto flutuante

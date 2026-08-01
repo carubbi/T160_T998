@@ -1,14 +1,14 @@
 // Declarar as variáveis
-let entradaCod;
-let entradaQtd;
-let codProd;
-let qtdProd;
-let precoProd;
-let totalPagar;
+let entradaCod: string;
+let entradaQtd: string;
+let codProd: number;
+let qtdProd: number;
+let precoProd: number;
+let totalPagar: number;
 
 // Entrada de dados
-entradaCod = prompt('Digite o código do produto: ');
-entradaQtd = prompt('Digite a quantidade do produto: ');
+entradaCod = prompt('Digite o código do produto: ')!;
+entradaQtd = prompt('Digite a quantidade do produto: ')!;
 
 // Processamento dos dados
 // Converter as entradas (string) para numérico

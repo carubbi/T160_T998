@@ -1,13 +1,13 @@
 // Declarar as variáveis
-let entradaDistancia;
-let entradaCombustivel;
-let distancia;
-let combustivel;
-let consumo;
+let entradaDistancia: string;
+let entradaCombustivel: string;
+let distancia: number;
+let combustivel: number;
+let consumo: number;
 
 // Entrada de dados
-entradaDistancia = prompt('Digite a distancia total: ');
-entradaCombustivel = prompt('Digite o combustivel gasto: ');
+entradaDistancia = prompt('Digite a distancia total: ')!;
+entradaCombustivel = prompt('Digite o combustivel gasto: ')!;
 
 // Processamento dos dados
 distancia = parseInt(entradaDistancia);
