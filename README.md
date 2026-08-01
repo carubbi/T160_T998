@@ -1,6 +1,8 @@
-# T160_T198
+# RLA
 
-Repositório acadêmico da disciplina de **Raciocínio Lógico e Algoritmo** da **Universidade de Fortaleza (UNIFOR)**, ofertada como **T160** para **Ciência da Computação** e **T198** para **Engenharia da Computação**, com materiais de apoio, listas de exercícios e conteúdos organizados por aula.
+Repositório acadêmico da disciplina de **Raciocínio Lógico Algorítmico** da **Universidade de Fortaleza (UNIFOR)**, destinado a estudantes de **Ciência da Computação**, **Análise e Desenvolvimento de Sistemas** e **Engenharia da Computação**. Na UNIFOR, a disciplina é ofertada como **T160** para Ciência da Computação e **T198** para Engenharia da Computação.
+
+O material reúne conteúdos organizados por aula, atividades introdutórias, exercícios propostos e soluções didáticas.
 
 ## Objetivo
 
@@ -23,7 +25,7 @@ instalação local.
 ## Estrutura do repositório
 
 ```text
-T160_T198/
+RLA/
 ├── aula1/
 ├── aula2/
 ├── aula3/
@@ -42,7 +44,9 @@ T160_T198/
 
 ### Conteúdo por pasta
 
-- `aula1/`: materiais introdutórios da disciplina.
+- `aula1/`: introdução à organização de instruções por meio da atividade do
+  sanduíche, de um vídeo sobre instruções imprecisas e de uma discussão sobre
+  linguagem natural e inteligência artificial.
 - `aula2/` a `aula11/`: materiais teóricos, exercícios e scripts TypeScript
   organizados conforme a progressão da disciplina.
 - `beecrowd/`: adaptações didáticas em TypeScript de problemas da plataforma
@@ -59,14 +63,14 @@ T160_T198/
 
 1. Acesse a pasta da aula desejada.
 2. Leia o arquivo `.md` para o conteúdo textual.
-3. Consulte o `.pdf` correspondente para material complementar.
+3. Quando houver, consulte o arquivo `.pdf` correspondente como material complementar.
 4. Use os arquivos `aulaN_0.ts` para revisão conceitual e `aulaN_X.ts/.md`
    para estudo por exercício.
 5. Na pasta `beecrowd/`, execute as soluções e compare com os enunciados da plataforma.
 
 ## Público-alvo
 
-Estudantes da disciplina T160 (Ciência da Computação) e T198 (Engenharia da Computação) da Universidade de Fortaleza (UNIFOR), além de interessados em fundamentos de lógica e algoritmos.
+Estudantes de Ciência da Computação, Análise e Desenvolvimento de Sistemas e Engenharia da Computação que estejam iniciando os estudos de programação, além de interessados em fundamentos de lógica e algoritmos.
 
 ## Última atualização
 
