@@ -1,0 +1,10 @@
+{
+  "name": "t160-t198-typescript",
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc --pretty false"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2"
+  }
+}
