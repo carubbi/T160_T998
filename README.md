@@ -57,7 +57,7 @@ RLA/
 ## Branches
 
 - `main`: versão atual do material em TypeScript.
-- `javascript`: versão de referência anterior à migração para TypeScript.
+- `javascript`: versão do material em JavaScript.
 
 ## Como utilizar
 
