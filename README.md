@@ -18,7 +18,7 @@ Centralizar os conteúdos da disciplina para estudo e acompanhamento, incluindo:
 Os exemplos podem ser executados diretamente no
 [Programiz TypeScript Online Compiler](https://www.programiz.com/typescript/online-compiler/)
 ou no [TypeScript Playground](https://www.typescriptlang.org/play/), sem
-instalação local de Node.js, npm ou TypeScript.
+instalação local.
 
 ## Estrutura do repositório
 
