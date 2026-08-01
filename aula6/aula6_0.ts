@@ -1,9 +1,27 @@
 // Aula 6 - Estruturas condicionais aninhadas
 
+// Declaracao de variaveis
+let condicao1: boolean;
+let condicao2: boolean;
+let mensagem: string;
+let alunoNota1: number;
+let alunoNota2: number;
+let alunoMedia: number;
+let situacaoAluno: string;
+let idade: number;
+let anosApto: number;
+let nota1: number;
+let nota2: number;
+let media: number;
+let resultado: string;
+let perfil: string;
+let matriculaAtiva: boolean;
+let valorCurso: number;
+let valorFinal: number;
+
 console.log('=== 1) if dentro de if ===');
-let condicao1 = true;
-let condicao2 = false;
-let mensagem;
+condicao1 = true;
+condicao2 = false;
 
 if (condicao1) {
   if (condicao2) {
@@ -17,10 +35,8 @@ if (condicao1) {
 console.log(mensagem);
 
 console.log('\n=== 2) Validar antes de decidir ===');
-let alunoNota1 = 7.0;
-let alunoNota2 = 4.0;
-let alunoMedia;
-let situacaoAluno;
+alunoNota1 = 7.0;
+alunoNota2 = 4.0;
 
 if (alunoNota1 >= 0 && alunoNota2 >= 0) {
   alunoMedia = (alunoNota1 + alunoNota2) / 2;
@@ -37,8 +53,7 @@ if (alunoNota1 >= 0 && alunoNota2 >= 0) {
 }
 
 console.log('\n=== 3) Faixa de idade com validacao ===');
-let idade = 16;
-let anosApto;
+idade = 16;
 
 if (idade < 0) {
   console.log('A idade deve ser maior ou igual a zero!');
@@ -50,10 +65,9 @@ if (idade < 0) {
 }
 
 console.log('\n=== 4) Classificacao progressiva ===');
-let nota1 = 8.0;
-let nota2 = 6.0;
-let media = (nota1 + nota2) / 2;
-let resultado;
+nota1 = 8.0;
+nota2 = 6.0;
+media = (nota1 + nota2) / 2;
 
 if (nota1 >= 0 && nota2 >= 0) {
   if (media >= 7) {
@@ -69,10 +83,9 @@ if (nota1 >= 0 && nota2 >= 0) {
 console.log(resultado);
 
 console.log('\n=== 5) switch com if aninhado ===');
-let perfil = 'aluno';
-let matriculaAtiva = true;
-let valorCurso = 1200;
-let valorFinal;
+perfil = 'aluno';
+matriculaAtiva = true;
+valorCurso = 1200;
 
 switch (perfil) {
   case 'aluno':

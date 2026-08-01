@@ -1,6 +1,6 @@
-<img src="../imgs/UNIFOR_logo1b.png" width="400"> 
+<img src="../imgs/UNIFOR_logo1b.png" width="400">
 
-# Raciocínio Lógico Algorítmico: Aula 7
+# Raciocínio Lógico Algorítmico: Aula 6
 Orientador: Prof. Me Ricardo Carubbi
 
 # Exercícios Beecrowd: Condicionais sem Laços
