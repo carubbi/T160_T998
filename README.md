@@ -1,4 +1,4 @@
-# RLA
+# Raciocínio Lógico Algorítmico - RLA
 
 Repositório acadêmico da disciplina de **Raciocínio Lógico Algorítmico** da **Universidade de Fortaleza (UNIFOR)**, destinado a estudantes de **Ciência da Computação**, **Análise e Desenvolvimento de Sistemas** e **Engenharia da Computação**.
 
