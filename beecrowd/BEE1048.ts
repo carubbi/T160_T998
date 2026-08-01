@@ -1,12 +1,12 @@
 // Declarar as variáveis
-let entradaSalario;
-let salario;
-let percentual;
-let reajuste;
-let novoSalario;
+let entradaSalario: string;
+let salario: number;
+let percentual: number;
+let reajuste: number;
+let novoSalario: number;
 
 // Entrada de dados
-entradaSalario = prompt('Digite o salario: ');
+entradaSalario = prompt('Digite o salario: ')!;
 
 // Processamento dos dados
 salario = parseFloat(entradaSalario);

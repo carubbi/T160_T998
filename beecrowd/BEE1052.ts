@@ -1,10 +1,10 @@
 // Declarar as variáveis
-let entradaMes;
-let mes;
-let nomeMes;
+let entradaMes: string;
+let mes: number;
+let nomeMes: string;
 
 // Entrada de dados
-entradaMes = prompt('Digite o numero do mes: ');
+entradaMes = prompt('Digite o numero do mes: ')!;
 
 // Processamento dos dados
 mes = parseInt(entradaMes);

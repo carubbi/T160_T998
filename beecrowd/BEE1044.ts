@@ -1,13 +1,13 @@
 // Declarar as variáveis
-let entradaA;
-let entradaB;
-let A;
-let B;
-let mensagem;
+let entradaA: string;
+let entradaB: string;
+let A: number;
+let B: number;
+let mensagem: string;
 
 // Entrada de dados
-entradaA = prompt('Digite A: ');
-entradaB = prompt('Digite B: ');
+entradaA = prompt('Digite A: ')!;
+entradaB = prompt('Digite B: ')!;
 
 // Processamento dos dados
 A = parseInt(entradaA);

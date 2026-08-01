@@ -1,8 +1,8 @@
 // Declarar as variáveis
-let vertebrado;
-let classe;
-let alimentacao;
-let animal;
+let vertebrado: string | null;
+let classe: string | null;
+let alimentacao: string | null;
+let animal: string;
 
 // Entrada de dados
 vertebrado = prompt('Digite o primeiro grupo: ');
@@ -10,6 +10,7 @@ classe = prompt('Digite o segundo grupo: ');
 alimentacao = prompt('Digite o tipo de alimentacao: ');
 
 // Processamento dos dados
+if (vertebrado !== null && classe !== null && alimentacao !== null) {
 if (vertebrado === 'vertebrado') {
   if (classe === 'ave') {
     if (alimentacao === 'carnivoro') {
@@ -42,3 +43,4 @@ if (vertebrado === 'vertebrado') {
 
 // Saída de dados
 console.log(animal);
+}

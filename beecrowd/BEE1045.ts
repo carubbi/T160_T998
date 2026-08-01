@@ -1,11 +1,11 @@
 // Declarar as variáveis
-let entradaA;
-let entradaB;
-let entradaC;
-let a;
-let b;
-let c;
-let temp;
+let entradaA: string | null;
+let entradaB: string | null;
+let entradaC: string | null;
+let a: number;
+let b: number;
+let c: number;
+let temp: number;
 
 // Entrada de dados
 entradaA = prompt('Digite A: ');
@@ -13,6 +13,7 @@ entradaB = prompt('Digite B: ');
 entradaC = prompt('Digite C: ');
 
 // Processamento dos dados
+if (entradaA !== null && entradaB !== null && entradaC !== null) {
 a = parseFloat(entradaA);
 b = parseFloat(entradaB);
 c = parseFloat(entradaC);
@@ -55,6 +56,7 @@ if (a >= b + c) {
   } else if (a === b || a === c || b === c) {
     console.log('TRIANGULO ISOSCELES');
   }
+}
 }
 
 /*

@@ -1,13 +1,13 @@
 // Declarar as variáveis
-let entradaInicio;
-let entradaFim;
-let inicio;
-let fim;
-let duracao;
+let entradaInicio: string;
+let entradaFim: string;
+let inicio: number;
+let fim: number;
+let duracao: number;
 
 // Entrada de dados
-entradaInicio = prompt('Digite a hora inicial: ');
-entradaFim = prompt('Digite a hora final: ');
+entradaInicio = prompt('Digite a hora inicial: ')!;
+entradaFim = prompt('Digite a hora final: ')!;
 
 // Processamento dos dados
 inicio = parseInt(entradaInicio);
