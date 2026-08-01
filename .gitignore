@@ -1,13 +1,9 @@
 .DS_Store
-AVs/
-AFs/
-local/
-ENADE/
-/docs/superpowers/
-/node_modules/
 
 # Infraestrutura local de validação do material
 /package.json
 /package-lock.json
 /tsconfig.json
 /scripts/
+/docs/superpowers/
+/node_modules/
