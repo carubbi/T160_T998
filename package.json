@@ -2,7 +2,9 @@
   "name": "t160-t198-typescript",
   "private": true,
   "scripts": {
-    "typecheck": "tsc --pretty false"
+    "typecheck": "tsc --pretty false",
+    "check:curriculum": "bash scripts/validate-curriculum.sh",
+    "test": "npm run typecheck && npm run check:curriculum"
   },
   "devDependencies": {
     "typescript": "7.0.2"
