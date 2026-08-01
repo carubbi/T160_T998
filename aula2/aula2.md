@@ -1,4 +1,4 @@
-<img src="../imgs/UNIFOR_logo1b.png" width="400"> 
+<img src="../imgs/UNIFOR_logo1b.png" width="400">
 
 # Raciocínio Lógico Algorítmico
 Orientador: Prof. Me Ricardo Carubbi
@@ -83,15 +83,24 @@ Em resumo, o teste de mesa é uma verificação manual do raciocínio do program
 
 ## Observações importantes
 
-### JavaScript
-Nesta disciplina, alguns exemplos de algoritmos serão mostrados também em JavaScript (JS). JS é uma linguagem de programação muito usada na Web e serve aqui como referência prática de como um algoritmo pode ser traduzido para código executável.
+### TypeScript
+Nesta disciplina, os exemplos de algoritmos serão escritos em TypeScript
+(TS). TypeScript permite indicar o tipo das variáveis e verificar
+incompatibilidades antes da execução. Nesta aula, as anotações como `: number`
+podem ser lidas como rótulos; os tipos serão detalhados na próxima aula.
 
-> Nesta aula, vamos usar `var` por simplicidade. `var` é uma palavra usada para criar variáveis. Nas próximas aulas, vamos ver os riscos de usar `var` e passaremos a usar apenas `let` e `const`.
+> Os exemplos usam `let` e declaram as variáveis antes das etapas de entrada,
+> processamento e saída.
 
 ### Compilador
-Um compilador é um programa que traduz um código escrito em uma linguagem (por exemplo, C ou Java) para outra forma que o computador entende diretamente. Em linguagens interpretadas (como JS), essa tradução acontece de forma diferente: o código é executado por um motor de execução, sem uma etapa explícita de compilação como em C.
+Um compilador traduz código de uma linguagem para outra forma executável.
+TypeScript verifica os tipos e converte o código para JavaScript, que então é
+executado. Nos compiladores online, essas etapas acontecem ao pressionar
+`Run`.
 
-> Se quiser testar códigos rapidamente no navegador, você pode usar um compilador online, como o [Programiz Online Compiler](https://www.programiz.com/).
+> Para testar os códigos no navegador, use o
+> [Programiz TypeScript Online Compiler](https://www.programiz.com/typescript/online-compiler/)
+> ou o [TypeScript Playground](https://www.typescriptlang.org/play/).
 
 ### Markdown
 Markdown é uma linguagem simples de marcação de texto usada para formatar documentos (títulos, listas, tabelas, código). As aulas e materiais em `.md` usam Markdown para facilitar a leitura e a organização do conteúdo.
@@ -99,10 +108,10 @@ Markdown é uma linguagem simples de marcação de texto usada para formatar doc
 > Para editar Markdown com suporte a diagramas, você pode usar o [merMDitor](https://www.mermditor.dev/), que renderiza Markdown e Mermaid no navegador.
 
 > Para inserir um bloco de código em Markdown, use três crases ``` antes e depois do trecho.
-No teclado ABNT2, o acento grave (\`) fica na tecla entre `P` e `[`; use `Shift` + essa tecla e depois `Espaço`. Segue abaixo dois exemplos de blocos de código:
+No teclado ABNT2, o acento grave (\`) fica na tecla entre `P` e `[`; use `Shift` + essa tecla e depois `Espaço`. Seguem abaixo dois exemplos de blocos de código:
 
-```javascript
-// Código em JS
+```typescript
+// Código em TypeScript
 ```
 
 ```mermaid
@@ -143,14 +152,21 @@ E --> F([FIM])
 | -4   | 5    | -20       | -20   |
 | 0    | 7    | 0         | 0     |
 
-#### Código JavaScript (Programiz)
+#### Código TypeScript (Programiz)
 
-```javascript
+```typescript
+// Declaracao de variaveis
+let num1: number;
+let num2: number;
+let resultado: number;
+
 // Entrada
-var num1 = 2;
-var num2 = 3;
+num1 = 2;
+num2 = 3;
+
 // Processamento
-var resultado = num1 * num2;
+resultado = num1 * num2;
+
 // Saída
 console.log(resultado);
 ```
@@ -175,19 +191,25 @@ D --> E([FIM])
 
 #### Teste de mesa
 
-| tempC  | tempF | saída                 | 
+| tempC  | tempF | saída                 |
 | --     | --    | --                    |
 | 0      | 32    | 32 graus Fahrenheit   |
 | 10     | 50    | 50 graus Fahrenheit   |
 | -17.78 | 0.00  | 0.00 graus Fahrenheit |
 
-#### Código JavaScript (Programiz)
+#### Código TypeScript (Programiz)
 
-```javascript
+```typescript
+// Declaracao de variaveis
+let tempC: number;
+let tempF: number;
+
 // Entrada
-var tempC = 25;
+tempC = 25;
+
 // Processamento
-var tempF = (9 / 5) * tempC + 32;
+tempF = (9 / 5) * tempC + 32;
+
 // Saída
 console.log(tempF);
 ```
@@ -224,18 +246,23 @@ G --> H
 | 9    | 4.5  | 2         | 2                   |
 | 7    | 0    | -         | "impossível dividir" |
 
-#### Código JavaScript (Programiz)
+#### Código TypeScript (Programiz)
 
-```javascript
+```typescript
+// Declaracao de variaveis
+let num1: number;
+let num2: number;
+let resultado: number;
+
 // Entrada
-var num1 = 10;
-var num2 = 2;
+num1 = 10;
+num2 = 2;
 
 // Processamento e saída
 if (num2 === 0) {
   console.log("impossível dividir");
 } else {
-  var resultado = num1 / num2;
+  resultado = num1 / num2;
   console.log(resultado);
 }
 ```
@@ -266,18 +293,23 @@ F --> G
 #### Teste de mesa
 
 | numero | resto | resto == 0 | saída   |
-| --     | --    | --         | --      | 
+| --     | --    | --         | --      |
 | 0      | 0     | V          | "par"   |
 | 13     | 1     | F          | "impar" |
 | 30     | 0     | V          | "par"   |
 
-#### Código JavaScript (Programiz)
+#### Código TypeScript (Programiz)
 
-```javascript
+```typescript
+// Declaracao de variaveis
+let num: number;
+let resto: number;
+
 // Entrada
-var num = 13;
+num = 13;
+
 // Processamento
-var resto = num % 2;
+resto = num % 2;
 
 // Saída
 if (resto === 0) {
@@ -317,14 +349,20 @@ G --> H
 | 5     | 4     | 4.5   | F          | "Reprovado" |
 | 10    | 9     | 9.5   | V          | "Aprovado"  |
 
-#### Código JavaScript (Programiz)
+#### Código TypeScript (Programiz)
 
-```javascript
+```typescript
+// Declaracao de variaveis
+let nota1: number;
+let nota2: number;
+let media: number;
+
 // Entrada
-var nota1 = 8;
-var nota2 = 6;
+nota1 = 8;
+nota2 = 6;
+
 // Processamento
-var media = (nota1 + nota2) / 2;
+media = (nota1 + nota2) / 2;
 
 // Saída
 if (media >= 7) {

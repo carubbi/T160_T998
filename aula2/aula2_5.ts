@@ -1,10 +1,15 @@
 // Questao 5 - Aula 2
+// Declaracao de variaveis
+let nota1: number;
+let nota2: number;
+let media: number;
+
 // Entrada
-var nota1 = 8;
-var nota2 = 6;
+nota1 = 8;
+nota2 = 6;
 
 // Processamento
-var media = (nota1 + nota2) / 2;
+media = (nota1 + nota2) / 2;
 
 // Saida
 if (media >= 7) {
