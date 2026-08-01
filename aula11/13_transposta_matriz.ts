@@ -1,10 +1,10 @@
 // Aula 11 - Exercicio complementar (transposta de matriz)
 
 // Retorna a transposta de uma matriz.
-function calcularTransposta(matriz) {
-    let transposta;
-    let i;
-    let j;
+function calcularTransposta(matriz: number[][]): number[][] {
+    let transposta: number[][];
+    let i: number;
+    let j: number;
 
     transposta = [];
 
@@ -20,10 +20,10 @@ function calcularTransposta(matriz) {
 }
 
 // Declaracao de variaveis
-let matriz;
-let transposta;
-let i;
-let j;
+let matriz: number[][];
+let transposta: number[][];
+let i: number;
+let j: number;
 
 // Entrada fixa para estudo
 matriz = [

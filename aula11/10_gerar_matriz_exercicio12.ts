@@ -1,10 +1,10 @@
 // Aula 11 - Exercicio 12 (gerar matriz por dimensoes)
 
 // Gera uma matriz em que cada posicao recebe i * 10 + j.
-function gerarMatrizPorDimensoes(nLinhas, nColunas) {
-    let matriz;
-    let i;
-    let j;
+function gerarMatrizPorDimensoes(nLinhas: number, nColunas: number): number[][] {
+    let matriz: number[][];
+    let i: number;
+    let j: number;
 
     matriz = [];
 
@@ -20,11 +20,11 @@ function gerarMatrizPorDimensoes(nLinhas, nColunas) {
 }
 
 // Declaracao de variaveis
-let matriz;
-let nLinhas;
-let nColunas;
-let i;
-let j;
+let matriz: number[][];
+let nLinhas: number;
+let nColunas: number;
+let i: number;
+let j: number;
 
 // Dimensoes da matriz da figura
 nLinhas = 6;

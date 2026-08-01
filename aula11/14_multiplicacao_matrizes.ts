@@ -1,12 +1,12 @@
 // Aula 11 - Exercicio complementar (multiplicacao de matrizes)
 
 // Multiplica duas matrizes.
-function multiplicarMatrizes(a, b) {
-    let resultado;
-    let i;
-    let j;
-    let k;
-    let soma;
+function multiplicarMatrizes(a: number[][], b: number[][]): number[][] {
+    let resultado: number[][];
+    let i: number;
+    let j: number;
+    let k: number;
+    let soma: number;
 
     resultado = [];
 
@@ -28,11 +28,11 @@ function multiplicarMatrizes(a, b) {
 }
 
 // Declaracao de variaveis
-let a;
-let b;
-let resultado;
-let i;
-let j;
+let a: number[][];
+let b: number[][];
+let resultado: number[][];
+let i: number;
+let j: number;
 
 // Entradas fixas para estudo
 a = [

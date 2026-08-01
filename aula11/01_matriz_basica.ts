@@ -1,7 +1,7 @@
 // Aula 11 - Exemplo 1 (matriz basica)
 
 // Declaracao de variaveis
-let matriz;
+let matriz: number[][];
 
 // Criacao da matriz
 matriz = [

@@ -7,7 +7,7 @@ Orientador: Prof. Me Ricardo Carubbi
 
 ## Objetivo
 
-Praticar o uso de matrizes em JavaScript usando:
+Praticar o uso de matrizes `number[][]` em TypeScript usando:
 
 - arrays bidimensionais;
 - acesso por `matriz[linha][coluna]`;
@@ -236,7 +236,7 @@ Soma da coluna 2: 18
 
 Solução de referência:
 
-- `11_exercicio9_soma_colunas_funcao.js`
+- `11_exercicio9_soma_colunas_funcao.ts`
 
 ## 10. Exercício de indexação por cores
 
@@ -269,8 +269,8 @@ Usando acesso por índice, exiba os elementos destacados pela cor digitada.
 
 A matriz esperada é:
 
-```javascript
-let matriz;
+```typescript
+let matriz: number[][];
 
 matriz = [
     [0, 1, 2, 3, 4, 5],
@@ -293,7 +293,7 @@ A função deve receber:
 
 Para cada posição, use:
 
-```javascript
+```typescript
 matriz[i][j] = i * 10 + j;
 ```
 
@@ -301,7 +301,7 @@ Depois de gerar a matriz, imprima todos os seus elementos.
 
 Para a figura, chame a função com:
 
-```javascript
+```typescript
 matriz = gerarMatrizPorDimensoes(6, 6);
 ```
 
@@ -315,7 +315,7 @@ Valores esperados:
 
 Formato esperado:
 
-```javascript
+```typescript
 for (i = 0; i < matriz.length; i++) {
     console.log(matriz[i][2]);
 }
@@ -331,7 +331,7 @@ Valores esperados:
 
 Formato esperado:
 
-```javascript
+```typescript
 for (j = 3; j <= 4; j++) {
     console.log(matriz[0][j]);
 }
@@ -347,7 +347,7 @@ Valores esperados:
 
 Formato esperado:
 
-```javascript
+```typescript
 for (i = 2; i <= 4; i = i + 2) {
     for (j = 0; j <= 4; j = j + 2) {
         console.log(matriz[i][j]);
@@ -365,7 +365,7 @@ Valores esperados:
 
 Formato esperado:
 
-```javascript
+```typescript
 for (i = 4; i <= 5; i++) {
     for (j = 4; j <= 5; j++) {
         console.log(matriz[i][j]);
@@ -379,7 +379,7 @@ O valor `44` aparece em mais de uma seleção. Isso acontece porque a mesma posi
 
 Solução de referência para a seleção por cor:
 
-- `12_exercicio10_indexacao_cores_funcao.js`
+- `12_exercicio10_indexacao_cores_funcao.ts`
 
 ## 11. Beecrowd 1181 - Linha na Matriz
 
@@ -407,7 +407,7 @@ Ideia geral:
 
 Ponto principal:
 
-```javascript
+```typescript
 matriz[linhaEscolhida][j]
 ```
 
@@ -415,7 +415,7 @@ Nesse exercício, a linha fica fixa e a coluna varia.
 
 Solução de referência:
 
-- `08_beecrowd_1181.js`
+- `08_beecrowd_1181.ts`
 
 ## 12. Beecrowd 1187 - Área Superior
 
@@ -444,7 +444,7 @@ Uma forma de identificar a área superior é observar a relação entre linha e 
 
 Para uma matriz 12x12, os elementos da área superior satisfazem:
 
-```javascript
+```typescript
 j > i && j < 11 - i
 ```
 
@@ -452,7 +452,7 @@ Esse exercício reforça que nem todo percurso usa todos os elementos da matriz.
 
 Solução de referência:
 
-- `09_beecrowd_1187.js`
+- `09_beecrowd_1187.ts`
 
 ## 13. Exercícios complementares resolvidos
 
@@ -479,7 +479,7 @@ Matriz transposta:
 
 Solução de referência:
 
-- `13_transposta_matriz.js`
+- `13_transposta_matriz.ts`
 
 ### 13.2 Multiplicação de matrizes
 
@@ -489,7 +489,7 @@ A função deve receber duas matrizes e retornar o resultado da multiplicação.
 
 Use como exemplo:
 
-```javascript
+```typescript
 a = [
     [1, 2, 3],
     [4, 5, 6]
@@ -511,7 +511,7 @@ Resultado esperado:
 
 Solução de referência:
 
-- `14_multiplicacao_matrizes.js`
+- `14_multiplicacao_matrizes.ts`
 
 ## Progressão sugerida
 

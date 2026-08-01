@@ -1,9 +1,9 @@
 // Aula 11 - Exemplo 2 (percurso de matriz)
 
 // Declaracao de variaveis
-let matriz;
-let i;
-let j;
+let matriz: number[][];
+let i: number;
+let j: number;
 
 // Criacao da matriz
 matriz = [
