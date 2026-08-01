@@ -1,6 +1,6 @@
 # RLA
 
-Repositório acadêmico da disciplina de **Raciocínio Lógico Algorítmico** da **Universidade de Fortaleza (UNIFOR)**, destinado a estudantes de **Ciência da Computação**, **Análise e Desenvolvimento de Sistemas** e **Engenharia da Computação**. Na UNIFOR, a disciplina é ofertada como **T160** para Ciência da Computação e **T198** para Engenharia da Computação.
+Repositório acadêmico da disciplina de **Raciocínio Lógico Algorítmico** da **Universidade de Fortaleza (UNIFOR)**, destinado a estudantes de **Ciência da Computação**, **Análise e Desenvolvimento de Sistemas** e **Engenharia da Computação**.
 
 O material reúne conteúdos organizados por aula, atividades introdutórias, exercícios propostos e soluções didáticas.
 
