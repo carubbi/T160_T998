@@ -1,17 +1,17 @@
-<img src="../imgs/UNIFOR_logo1b.png" width="400"> 
+<img src="../imgs/UNIFOR_logo1b.png" width="400">
 
 # Raciocínio Lógico Algorítmico: Aula 7
 Orientador: Prof. Me Ricardo Carubbi
 
-## Estruturas de repetição em JavaScript
+## Estruturas de repetição em TypeScript
 
 ### Objetivo da aula
-Compreender quando usar `while`, `do...while` e `for`, representando algoritmos com descrição narrativa, fluxograma, teste de mesa e código JavaScript no Programiz.
+Compreender quando usar `while`, `do...while` e `for`, representando algoritmos com descrição narrativa, fluxograma, teste de mesa e código TypeScript no Programiz.
 
 ## 1. Fundamentação teórica
 Estruturas de repetição, também chamadas de laços ou loops, permitem executar um bloco de código várias vezes. Elas são usadas quando o algoritmo precisa repetir uma ação até que uma condição seja satisfeita ou durante uma quantidade conhecida de iterações.
 
-Em JavaScript, os laços mais usados são:
+Em TypeScript, os laços mais usados são:
 
 - `while`: repete enquanto a condição for verdadeira. A verificação acontece antes da execução do bloco.
 - `do...while`: executa o bloco pelo menos uma vez e só depois verifica a condição.
@@ -22,30 +22,48 @@ Em JavaScript, os laços mais usados são:
 - Use `do...while` quando o algoritmo precisa executar ao menos uma vez antes de decidir se repete.
 - Use `for` quando existe contador, faixa de valores ou quantidade fixa de repetições.
 
-## 3. Sintaxe básica
+## 3. Cancelamento de entrada dentro de um laço
+Como estudado na Aula 6, `prompt()` retorna `string | null`. Quando uma nova
+entrada é solicitada dentro de um laço, a condição de repetição também deve
+considerar a possibilidade de cancelamento.
+
+```typescript
+while (numero <= 0 && entrada !== null) {
+    entrada = prompt("Digite um numero positivo:");
+
+    if (entrada !== null) {
+        numero = parseInt(entrada);
+    }
+}
+```
+
+Sem a verificação de `null`, o algoritmo poderia tentar converter uma entrada
+cancelada ou continuar repetindo sem receber um novo valor.
+
+## 4. Sintaxe básica
 
 ### 3.1 Laço `while`
-```javascript
+```typescript
 while (condicao) {
     // bloco de repeticao
 }
 ```
 
 ### 3.2 Laço `do...while`
-```javascript
+```typescript
 do {
     // bloco de repeticao
 } while (condicao);
 ```
 
 ### 3.3 Laço `for`
-```javascript
+```typescript
 for (inicializacao; condicao; incremento) {
     // bloco de repeticao
 }
 ```
 
-## 4. Exemplos práticos
+## 5. Exemplos práticos
 
 ### Exemplo 1: `while` básico com contador
 
@@ -81,22 +99,25 @@ Entrada escolhida: `quantidade = 3`
 | 3 | 2 | V | 2 |
 | 4 | 3 | F | - |
 
-#### Código JavaScript (Programiz)
-```javascript
+#### Código TypeScript (Programiz)
+```typescript
 // Declaracao de variaveis
-let i;
-let quantidade;
+let entradaQuantidade: string | null;
+let i: number;
+let quantidade: number;
 
 // Entrada
-quantidade = prompt("Digite a quantidade de iteracoes:"); // 3
+entradaQuantidade = prompt("Digite a quantidade de iteracoes:"); // 3
 
 // Processamento
-i = 0;
-quantidade = parseInt(quantidade);
+if (entradaQuantidade !== null) {
+    i = 0;
+    quantidade = parseInt(entradaQuantidade);
 
-while (i < quantidade) {
-    console.log(i);
-    i++;
+    while (i < quantidade) {
+        console.log(i);
+        i++;
+    }
 }
 ```
 
@@ -129,25 +150,33 @@ F --> G([FIM])
 | 2 | 0 | V | Numero invalido\nNumero invalido | Numero invalido / Numero invalido |
 | 3 | 7 | F | Numero invalido\nNumero invalido\nNumero valido | Numero invalido / Numero invalido / Numero valido |
 
-#### Código JavaScript (Programiz)
-```javascript
+#### Código TypeScript (Programiz)
+```typescript
 // Declaracao de variaveis
-let num;
+let entradaNumero: string | null;
+let num: number;
 
 // Entrada
-num = prompt("Digite um numero positivo:"); // -3
+entradaNumero = prompt("Digite um numero positivo:"); // -3
 
 // Processamento
-num = parseInt(num);
+if (entradaNumero !== null) {
+    num = parseInt(entradaNumero);
 
-while (num <= 0) {
-    console.log("Numero invalido");
-    num = prompt("Digite um numero positivo:"); // 0, 7
-    num = parseInt(num);
+    while (num <= 0 && entradaNumero !== null) {
+        console.log("Numero invalido");
+        entradaNumero = prompt("Digite um numero positivo:"); // 0, 7
+
+        if (entradaNumero !== null) {
+            num = parseInt(entradaNumero);
+        }
+    }
+
+    // Saida
+    if (entradaNumero !== null) {
+        console.log("Numero valido");
+    }
 }
-
-// Saida
-console.log("Numero valido");
 ```
 
 ### Exemplo 3: `while` para pedir senha até acertar
@@ -179,11 +208,11 @@ F --> G([FIM])
 | 2 | 9999 | V | Senha incorreta\nSenha incorreta | Senha incorreta / Senha incorreta |
 | 3 | 1234 | F | Senha incorreta\nSenha incorreta\nAcesso liberado | Senha incorreta / Senha incorreta / Acesso liberado |
 
-#### Código JavaScript (Programiz)
-```javascript
+#### Código TypeScript (Programiz)
+```typescript
 // Declaracao de variaveis
-let senha;
-let mensagem;
+let senha: string | null;
+let mensagem: string;
 
 // Entrada
 senha = prompt("Digite a senha:"); // 1111
@@ -191,33 +220,37 @@ senha = prompt("Digite a senha:"); // 1111
 // Processamento
 mensagem = "";
 
-while (senha != "1234") {
+while (senha !== "1234" && senha !== null) {
     mensagem += "Senha incorreta\n";
     senha = prompt("Digite a senha:"); // 9999, 1234
 }
 
-mensagem += "Acesso liberado";
+if (senha !== null) {
+    mensagem += "Acesso liberado";
 
-// Saida
-console.log(mensagem);
+    // Saida
+    console.log(mensagem);
+}
 ```
 
 #### Opção equivalente com `console.log()` dentro do `while`
-```javascript
+```typescript
 // Declaracao de variaveis
-let senha;
+let senha: string | null;
 
 // Entrada
 senha = prompt("Digite a senha:"); // 1111
 
 // Processamento
-while (senha != "1234") {
+while (senha !== "1234" && senha !== null) {
     console.log("Senha incorreta");
     senha = prompt("Digite a senha:"); // 9999, 1234
 }
 
 // Saida
-console.log("Acesso liberado");
+if (senha !== null) {
+    console.log("Acesso liberado");
+}
 ```
 
 ### Exemplo 4: `while` para pedir números até digitar 0
@@ -252,27 +285,35 @@ G --> H([FIM])
 | 3 | 2 | V | 8 | 10 | - |
 | 4 | 0 | F | 10 | 10 | 10 |
 
-#### Código JavaScript (Programiz)
-```javascript
+#### Código TypeScript (Programiz)
+```typescript
 // Declaracao de variaveis
-let num;
-let soma;
+let entradaNumero: string | null;
+let num: number;
+let soma: number;
 
 // Entrada
-num = prompt("Digite um numero (0 para encerrar):"); // 5
+entradaNumero = prompt("Digite um numero (0 para encerrar):"); // 5
 
 // Processamento
-num = parseInt(num);
-soma = 0;
+if (entradaNumero !== null) {
+    num = parseInt(entradaNumero);
+    soma = 0;
 
-while (num != 0) {
-    soma += num;
-    num = prompt("Digite um numero (0 para encerrar):"); // 3, 2, 0
-    num = parseInt(num);
+    while (num !== 0 && entradaNumero !== null) {
+        soma += num;
+        entradaNumero = prompt("Digite um numero (0 para encerrar):"); // 3, 2, 0
+
+        if (entradaNumero !== null) {
+            num = parseInt(entradaNumero);
+        }
+    }
+
+    // Saida
+    if (entradaNumero !== null) {
+        console.log(soma);
+    }
 }
-
-// Saida
-console.log(soma);
 ```
 
 ### Exemplo 5: `do...while` básico com contador
@@ -305,10 +346,10 @@ E -- F --> F([FIM])
 | 2 | 1 | V | 1 |
 | 3 | 2 | F | 2 |
 
-#### Código JavaScript (Programiz)
-```javascript
+#### Código TypeScript (Programiz)
+```typescript
 // Declaracao de variaveis
-let i;
+let i: number;
 
 // Processamento
 i = 0;
@@ -350,21 +391,23 @@ E --> F([FIM])
 | 2 | 9999 | V | Senha incorreta |
 | 3 | 1234 | F | Acesso liberado |
 
-#### Código JavaScript (Programiz)
-```javascript
+#### Código TypeScript (Programiz)
+```typescript
 // Declaracao de variaveis
-let senha;
+let senha: string | null;
 
 // Processamento e saida
 do {
     senha = prompt("Digite a senha:"); // 1111, 9999, 1234
 
-    if (senha != "1234") {
+    if (senha !== "1234" && senha !== null) {
         console.log("Senha incorreta");
     }
-} while (senha != "1234");
+} while (senha !== "1234" && senha !== null);
 
-console.log("Acesso liberado");
+if (senha !== null) {
+    console.log("Acesso liberado");
+}
 ```
 
 
@@ -399,27 +442,35 @@ F --> G([FIM])
 | 2 | 0 | V | Numero invalido\nNumero invalido | Numero invalido / Numero invalido |
 | 3 | 5 | F | Numero invalido\nNumero invalido\nNumero valido | Numero invalido / Numero invalido / Numero valido |
 
-#### Código JavaScript (Programiz)
-```javascript
+#### Código TypeScript (Programiz)
+```typescript
 // Declaracao de variaveis
-let num;
+let entradaNumero: string | null;
+let num: number;
 
 // Entrada
-num = prompt("Digite um numero positivo:"); // -2
+entradaNumero = prompt("Digite um numero positivo:"); // -2
 
 // Processamento
-num = parseInt(num);
+if (entradaNumero !== null) {
+    num = parseInt(entradaNumero);
 
-do {
-    if (num <= 0) {
-        console.log("Numero invalido");
-        num = prompt("Digite um numero positivo:"); // 0, 5
-        num = parseInt(num);
+    do {
+        if (num <= 0) {
+            console.log("Numero invalido");
+            entradaNumero = prompt("Digite um numero positivo:"); // 0, 5
+
+            if (entradaNumero !== null) {
+                num = parseInt(entradaNumero);
+            }
+        }
+    } while (num <= 0 && entradaNumero !== null);
+
+    // Saida
+    if (entradaNumero !== null) {
+        console.log("Numero valido");
     }
-} while (num <= 0);
-
-// Saida
-console.log("Numero valido");
+}
 ```
 
 ### Exemplo 8: `do...while` para pedir nota até ela estar válida
@@ -452,27 +503,35 @@ F --> G([FIM])
 | 2 | -1 | V | Nota invalida\nNota invalida | Nota invalida / Nota invalida |
 | 3 | 8 | F | Nota invalida\nNota invalida\nNota valida: 8 | Nota invalida / Nota invalida / Nota valida: 8 |
 
-#### Código JavaScript (Programiz)
-```javascript
+#### Código TypeScript (Programiz)
+```typescript
 // Declaracao de variaveis
-let nota;
+let entradaNota: string | null;
+let nota: number;
 
 // Entrada
-nota = prompt("Digite uma nota de 0 a 10:"); // 12
+entradaNota = prompt("Digite uma nota de 0 a 10:"); // 12
 
 // Processamento
-nota = parseFloat(nota);
+if (entradaNota !== null) {
+    nota = parseFloat(entradaNota);
 
-do {
-    if (nota < 0 || nota > 10) {
-        console.log("Nota invalida");
-        nota = prompt("Nota invalida. Digite uma nota de 0 a 10:"); // -1, 8
-        nota = parseFloat(nota);
+    do {
+        if (nota < 0 || nota > 10) {
+            console.log("Nota invalida");
+            entradaNota = prompt("Nota invalida. Digite uma nota de 0 a 10:"); // -1, 8
+
+            if (entradaNota !== null) {
+                nota = parseFloat(entradaNota);
+            }
+        }
+    } while ((nota < 0 || nota > 10) && entradaNota !== null);
+
+    // Saida
+    if (entradaNota !== null) {
+        console.log(`Nota valida: ${nota}`);
     }
-} while (nota < 0 || nota > 10);
-
-// Saida
-console.log(`Nota valida: ${nota}`);
+}
 ```
 
 ### Exemplo 9: `do...while` para mostrar menu até escolher sair
@@ -517,41 +576,45 @@ L -- F --> M([FIM])
 | 2 | 5 | V | Opcao 2 escolhida\nOpcao invalida | Opcao 2 escolhida / Opcao invalida |
 | 3 | 0 | F | Opcao 2 escolhida\nOpcao invalida\nEncerrar menu | Opcao 2 escolhida / Opcao invalida / Encerrar menu |
 
-#### Código JavaScript (Programiz)
-```javascript
+#### Código TypeScript (Programiz)
+```typescript
 // Declaracao de variaveis
-let opcao;
-let mensagem;
+let opcao: string | null;
+let mensagem: string;
 
 // Entrada
 opcao = prompt("Digite uma opcao de 1 a 3 (0 para sair):"); // 2
 
 // Processamento
-mensagem = "";
+if (opcao !== null) {
+    mensagem = "";
 
-do {
-    if (opcao == "1") {
-        mensagem += "Opcao 1 escolhida\n";
-    } else if (opcao == "2") {
-        mensagem += "Opcao 2 escolhida\n";
-    } else if (opcao == "3") {
-        mensagem += "Opcao 3 escolhida\n";
-    } else if (opcao == "0") {
-        mensagem += "Encerrar menu\n";
-    } else {
-        mensagem += "Opcao invalida\n";
+    do {
+        if (opcao === "1") {
+            mensagem += "Opcao 1 escolhida\n";
+        } else if (opcao === "2") {
+            mensagem += "Opcao 2 escolhida\n";
+        } else if (opcao === "3") {
+            mensagem += "Opcao 3 escolhida\n";
+        } else if (opcao === "0") {
+            mensagem += "Encerrar menu\n";
+        } else {
+            mensagem += "Opcao invalida\n";
+        }
+
+        if (opcao !== "0") {
+            opcao = prompt("Digite uma opcao de 1 a 3 (0 para sair):"); // 5, 0
+        }
+    } while (opcao !== "0" && opcao !== null);
+
+    // Saida
+    if (opcao !== null) {
+        console.log(mensagem);
     }
-
-    if (opcao != "0") {
-        opcao = prompt("Digite uma opcao de 1 a 3 (0 para sair):"); // 5, 0
-    }
-} while (opcao != "0");
-
-// Saida
-console.log(mensagem);
+}
 ```
 
-### Exemplo 9: `for` básico com contador
+### Exemplo 10: `for` básico com contador
 
 #### Descrição narrativa
 1. Ler a quantidade de iteracoes.
@@ -585,24 +648,27 @@ Entrada escolhida: `quantidade = 3`
 | 3 | 2 | V | 2 |
 | 4 | 3 | F | - |
 
-#### Código JavaScript (Programiz)
-```javascript
+#### Código TypeScript (Programiz)
+```typescript
 // Declaracao de variaveis
-let i;
-let quantidade;
+let entradaQuantidade: string | null;
+let i: number;
+let quantidade: number;
 
 // Entrada
-quantidade = prompt("Digite a quantidade de iteracoes:"); // 3
+entradaQuantidade = prompt("Digite a quantidade de iteracoes:"); // 3
 
 // Processamento
-quantidade = parseInt(quantidade);
+if (entradaQuantidade !== null) {
+    quantidade = parseInt(entradaQuantidade);
 
-for (i = 0; i < quantidade; i++) {
-    console.log(i);
+    for (i = 0; i < quantidade; i++) {
+        console.log(i);
+    }
 }
 ```
 
-### Exemplo 10: `for` para contar de 0 até um limite
+### Exemplo 11: `for` para contar de 0 até um limite
 
 #### Descrição narrativa
 1. Ler o limite da contagem.
@@ -636,29 +702,32 @@ Entrada escolhida: `limite = 3`
 | 4 | 3 | V | 0 / 1 / 2 / 3 |
 | 5 | 4 | F | 0 / 1 / 2 / 3 |
 
-#### Código JavaScript (Programiz)
-```javascript
+#### Código TypeScript (Programiz)
+```typescript
 // Declaracao de variaveis
-let limite;
-let i;
-let mensagem;
+let entradaLimite: string | null;
+let limite: number;
+let i: number;
+let mensagem: string;
 
 // Entrada
-limite = prompt("Digite o limite da contagem:"); // 3
+entradaLimite = prompt("Digite o limite da contagem:"); // 3
 
 // Processamento
-limite = parseInt(limite);
-mensagem = "";
+if (entradaLimite !== null) {
+    limite = parseInt(entradaLimite);
+    mensagem = "";
 
-for (i = 0; i <= limite; i++) {
-    mensagem += `${i}\n`;
+    for (i = 0; i <= limite; i++) {
+        mensagem += `${i}\n`;
+    }
+
+    // Saida
+    console.log(mensagem);
 }
-
-// Saida
-console.log(mensagem);
 ```
 
-### Exemplo 11: `for` para gerar a tabuada
+### Exemplo 12: `for` para gerar a tabuada
 
 #### Descrição narrativa
 1. Ler um número.
@@ -694,31 +763,34 @@ Entrada escolhida: `num = 4`
 | 10 | 10 | V | 40 | ... / 4 x 10 = 40 |
 | 11 | 11 | F | - | tabuada completa |
 
-#### Código JavaScript (Programiz)
-```javascript
+#### Código TypeScript (Programiz)
+```typescript
 // Declaracao de variaveis
-let num;
-let fator;
-let prod;
-let tabuada;
+let entradaNumero: string | null;
+let num: number;
+let fator: number;
+let prod: number;
+let tabuada: string;
 
 // Entrada
-num = prompt("Digite o numero da tabuada:"); // 4
+entradaNumero = prompt("Digite o numero da tabuada:"); // 4
 
 // Processamento
-num = parseInt(num);
-tabuada = "";
+if (entradaNumero !== null) {
+    num = parseInt(entradaNumero);
+    tabuada = "";
 
-for (fator = 1; fator <= 10; fator++) {
-    prod = num * fator;
-    tabuada += `${num} x ${fator} = ${prod}\n`;
+    for (fator = 1; fator <= 10; fator++) {
+        prod = num * fator;
+        tabuada += `${num} x ${fator} = ${prod}\n`;
+    }
+
+    // Saida
+    console.log(tabuada);
 }
-
-// Saida
-console.log(tabuada);
 ```
 
-### Exemplo 12: `for` para somar n números
+### Exemplo 13: `for` para somar n números
 
 #### Descrição narrativa
 1. Ler quantos números serão somados.
@@ -754,32 +826,42 @@ Entrada escolhida: `quantidade = 3`
 | 3 | 3 | V | 5 | 30 | 35 | - |
 | 4 | 4 | F | - | 35 | 35 | 35 |
 
-#### Código JavaScript (Programiz)
-```javascript
+#### Código TypeScript (Programiz)
+```typescript
 // Declaracao de variaveis
-let quantidade;
-let i;
-let num;
-let soma;
+let entradaQuantidade: string | null;
+let entradaNumero: string | null;
+let quantidade: number;
+let i: number;
+let num: number;
+let soma: number;
 
 // Entrada
-quantidade = prompt("Digite quantos numeros deseja somar:"); // 3
+entradaQuantidade = prompt("Digite quantos numeros deseja somar:"); // 3
 
 // Processamento
-quantidade = parseInt(quantidade);
-soma = 0;
+if (entradaQuantidade !== null) {
+    quantidade = parseInt(entradaQuantidade);
+    entradaNumero = "";
+    soma = 0;
 
-for (i = 1; i <= quantidade; i++) {
-    num = prompt(`Digite o ${i}o numero:`); // 10, 20, 5
-    num = parseInt(num);
-    soma += num;
+    for (i = 1; i <= quantidade && entradaNumero !== null; i++) {
+        entradaNumero = prompt(`Digite o ${i}o numero:`); // 10, 20, 5
+
+        if (entradaNumero !== null) {
+            num = parseInt(entradaNumero);
+            soma += num;
+        }
+    }
+
+    // Saida
+    if (entradaNumero !== null) {
+        console.log(soma);
+    }
 }
-
-// Saida
-console.log(soma);
 ```
 
-## 5. Comparativo final
+## 6. Comparativo final
 
 | Estrutura | Quando usar | Exemplo desta aula |
 | --- | --- | --- |
@@ -787,7 +869,7 @@ console.log(soma);
 | `do...while` | quando o bloco precisa executar ao menos uma vez | contador basico, numero positivo, nota valida, menu |
 | `for` | quando existe contagem conhecida | contador basico, contagem, tabuada, soma de n numeros |
 
-## 6. Fechamento
+## 7. Fechamento
 Nesta aula, vimos que a escolha da estrutura de repetição depende do problema. O mais importante não é decorar sintaxe, mas perceber se o algoritmo depende de uma condição aberta, de uma execução mínima obrigatória ou de uma quantidade conhecida de repetições.
 
 ## Referências bibliográficas

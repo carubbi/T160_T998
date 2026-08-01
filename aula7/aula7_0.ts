@@ -1,23 +1,40 @@
 // Aula 7 - Estruturas de repeticao
 
+// Declaracao de variaveis
+let i: number;
+let quantidadeIteracoesWhile: number;
+let num: number;
+let senha: string;
+let mensagem: string;
+let entrada: number;
+let soma: number;
+let nota: number;
+let opcao: string;
+let quantidadeIteracoes: number;
+let limite: number;
+let fator: number;
+let prod: number;
+let tabuada: string;
+let quantidade: number;
+
 console.log('=== 1) while: basico com contador ===');
-let i = 0;
-let quantidadeIteracoesWhile = 3;
+i = 0;
+quantidadeIteracoesWhile = 3;
 while (i < quantidadeIteracoesWhile) {
   console.log(i);
   i++;
 }
 
 console.log('\n=== 2) while: pedir numero positivo ===');
-let num = -3;
+num = -3;
 while (num <= 0) {
   num = num === -3 ? 0 : 7;
 }
 console.log('Numero valido');
 
 console.log('\n=== 3) while: pedir senha ate acertar ===');
-let senha = '1111';
-let mensagem = '';
+senha = '1111';
+mensagem = '';
 while (senha !== '1234') {
   mensagem += 'Senha incorreta\n';
   senha = senha === '1111' ? '9999' : '1234';
@@ -26,8 +43,8 @@ mensagem += 'Acesso liberado';
 console.log(mensagem);
 
 console.log('\n=== 4) while: somar ate digitar 0 ===');
-let entrada = 5;
-let soma = 0;
+entrada = 5;
+soma = 0;
 while (entrada !== 0) {
   soma += entrada;
   if (entrada === 5) {
@@ -57,7 +74,7 @@ do {
 console.log('Numero valido');
 
 console.log('\n=== 7) do...while: validar nota ===');
-let nota = 12;
+nota = 12;
 do {
   if (nota < 0 || nota > 10) {
     nota = nota === 12 ? -1 : 8;
@@ -66,7 +83,7 @@ do {
 console.log(`Nota valida: ${nota}`);
 
 console.log('\n=== 8) do...while: menu ===');
-let opcao = '2';
+opcao = '2';
 mensagem = '';
 do {
   if (opcao === '1') {
@@ -88,13 +105,13 @@ do {
 console.log(mensagem);
 
 console.log('\n=== 9) for: basico com contador ===');
-let quantidadeIteracoes = 3;
+quantidadeIteracoes = 3;
 for (i = 0; i < quantidadeIteracoes; i++) {
   console.log(i);
 }
 
 console.log('\n=== 10) for: contar de 0 ate um limite ===');
-let limite = 3;
+limite = 3;
 mensagem = '';
 for (i = 0; i <= limite; i++) {
   mensagem += `${i}\n`;
@@ -103,9 +120,7 @@ console.log(mensagem);
 
 console.log('\n=== 11) for: tabuada ===');
 num = 4;
-let fator;
-let prod;
-let tabuada = '';
+tabuada = '';
 for (fator = 1; fator <= 10; fator++) {
   prod = num * fator;
   tabuada += `${num} x ${fator} = ${prod}\n`;
@@ -113,7 +128,7 @@ for (fator = 1; fator <= 10; fator++) {
 console.log(tabuada);
 
 console.log('\n=== 12) for: somar n numeros ===');
-let quantidade = 3;
+quantidade = 3;
 soma = 0;
 for (i = 1; i <= quantidade; i++) {
   if (i === 1) {

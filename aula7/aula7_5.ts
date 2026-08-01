@@ -1,6 +1,6 @@
 // Aula 7 - Exemplo 5 (do...while basico com contador)
 // Declaracao de variaveis
-let i;
+let i: number;
 
 // Processamento
 i = 0;
