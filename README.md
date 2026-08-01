@@ -49,8 +49,9 @@ RLA/
   linguagem natural e inteligência artificial.
 - `aula2/` a `aula11/`: materiais teóricos, exercícios e scripts TypeScript
   organizados conforme a progressão da disciplina.
-- `beecrowd/`: adaptações didáticas em TypeScript de problemas da plataforma
-  Beecrowd. Os scripts usam `prompt()` ou valores fixos e não representam
+- `beecrowd/`: adaptações didáticas em TypeScript de problemas da
+  [plataforma Beecrowd](https://judge.beecrowd.com/pt). Os scripts usam
+  `prompt()` ou valores fixos e não representam
   necessariamente o formato de submissão do juiz.
 - `imgs/`: imagens de apoio utilizadas nos materiais.
 
