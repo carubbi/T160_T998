@@ -1,8 +1,8 @@
 // Aula 9 - Exemplo 4 (uso de length)
 
 // Declaracao de variaveis
-let notas;
-let ultimoIndice;
+let notas: number[];
+let ultimoIndice: number;
 
 // Processamento
 notas = [8.5, 7.0, 9.2, 6.5, 10.0];

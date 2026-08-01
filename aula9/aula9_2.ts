@@ -1,7 +1,7 @@
 // Aula 9 - Exemplo 2 (acesso por indice)
 
 // Declaracao de variaveis
-let notas;
+let notas: number[];
 
 // Processamento
 notas = [8.5, 7.0, 9.2, 6.5, 10.0];

@@ -1,8 +1,8 @@
 // Aula 9 - Exemplo 1 (array dinamico por indice)
 
 // Declaracao de variaveis
-let valores;
-let i;
+let valores: number[];
+let i: number;
 
 // Processamento
 valores = [];

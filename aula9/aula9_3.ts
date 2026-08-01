@@ -1,8 +1,8 @@
 // Aula 9 - Exemplo 3 (alteracao de valor em vetor)
 
 // Declaracao de variaveis
-let notas;
-let i;
+let notas: number[];
+let i: number;
 
 // Processamento
 notas = [8.5, 7.0, 9.2];
