@@ -1,6 +1,7 @@
 .DS_Store
 .env
 /.codex
+/AGENTS.md
 
 # Infraestrutura local de validação do material
 /package.json
