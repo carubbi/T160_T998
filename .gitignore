@@ -1,4 +1,5 @@
 .DS_Store
+.env
 
 # Infraestrutura local de validação do material
 /package.json
