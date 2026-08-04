@@ -16,4 +16,4 @@ O código combina:
 
 **Exemplo:** `M24AB` corresponde ao turno da manhã, às segundas e quartas-feiras, no bloco AB, das 7h30 às 9h10.
 
-Consulte a distribuição em [Turmas da disciplina T290 — 2026.2](turmas_2026_2.md).
+Consulte a distribuição em [Turmas da disciplina T160 — 2026.2](turmas_2026_2.md).

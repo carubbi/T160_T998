@@ -63,6 +63,7 @@
   - **03.05 — Algoritmo de sequência de Fibonacci.**
   - **03.06 — Algoritmo de conversão de base.**
   - **03.07 — Algoritmo de geração dos n-primeiros números primos.**
+- **Sequência pedagógica adotada:** após a consolidação das estruturas de repetição, os algoritmos fundamentais de 03.02 a 03.07 serão estudados antes de 03.01, para que funções e modularidade sejam introduzidas pela decomposição e refatoração de soluções previamente construídas.
 
 ### Unidade IV — Estruturas de dados simples e suas aplicações
 
@@ -205,18 +206,28 @@
 
 ## 9. Metodologia de avaliação
 
-- **AT (Avaliação Teórica):** composta por duas aplicações de questões objetivas de múltipla escolha para acompanhamento do desempenho discente, com ponderação de 20%, considerando-se, para fins de composição da nota, a maior nota obtida.
+- **AF (Avaliação Formativa):** composta por duas avaliações obrigatórias, aplicadas em momentos distintos e associadas a diferentes marcos de conteúdo para acompanhamento do desempenho discente. Cada AF contém 10 questões objetivas de múltipla escolha no estilo ENADE e ocupa os 60 minutos finais de uma aula, após 40 minutos iniciais destinados a dúvidas e revisão rápida. A maior nota entre as duas avaliações constitui a AF final, com ponderação de 20%.
 
-- **AP (Avaliação Prática):** composta por uma única prova prática de codificação em JavaScript em HTML, com ponderação de 80% e possibilidade de segunda chamada, conforme normativo institucional.
+- **AS (Avaliação Somativa):** composta por uma única prova de codificação de 100 minutos, realizada no AVA em ambiente controlado com Safe Exam Browser, para resolução de duas questões da Olimpíada Brasileira de Informática (OBI) adaptadas para TypeScript em compilador online, com ponderação de 80% e possibilidade de segunda chamada, conforme normativo institucional.
 
-- **AV (Avaliação Somativa):** resultante da composição entre a maior nota obtida nas avaliações teóricas e a nota da avaliação prática.
+- **AV (Registro Avaliativo Final):** resultante da composição `AVx = 0,20 × max(AFx.1, AFx.2) + 0,80 × ASx`, isto é, 20% da maior nota entre as duas avaliações formativas obrigatórias e 80% da avaliação somativa.
 
 ### Distribuição dos conteúdos por avaliação
 
-- **AV1:** variáveis, tipos de dados, entrada e saída, estrutura sequencial e estruturas condicionais.
-- **AV2:** estruturas de repetição, funções, modularidade e algoritmos fundamentais.
-- **AV3:** vetores, matrizes, técnicas de busca linear e binária e ordenação pelo método da bolha.
+- **AV1:**
+  - **AF1.1:** variáveis, tipos de dados, expressões, operadores, entrada, saída e estrutura sequencial.
+  - **AF1.2:** estruturas condicionais simples, compostas, encadeadas e aninhadas.
+  - **AS1:** integração dos conteúdos da AV1 em uma prova de codificação.
+- **AV2:**
+  - **AF2.1:** estruturas de repetição e algoritmos de troca, contagem, soma, multiplicação, fatorial, Fibonacci, conversão de base e geração de números primos.
+  - **AF2.2:** funções, parâmetros, retorno, escopo, decomposição, reutilização de código e modularidade.
+  - **AS2:** integração dos conteúdos da AV2 em uma prova de codificação.
+- **AV3:**
+  - **AF3.1:** vetores, busca linear e binária e ordenação pelo método da bolha.
+  - **AF3.2:** matrizes e integração das estruturas de dados simples.
+  - **AS3:** integração dos conteúdos da AV3 em uma prova de codificação.
 
 ### Observações
 
-- Todas as avaliações ocorrem em ambiente controlado com Safe Exam Browser.
+- Nesta disciplina regular, a sigla **AS** significa **Avaliação Somativa** e não Avaliação Substitutiva.
+- Todas as avaliações ocorrem no AVA em ambiente controlado com Safe Exam Browser. As duas AFs de cada AV são obrigatórias, ainda que somente a maior nota componha a AF final. Toda AS será realizada na aula teórica e precedida por um encontro integral de revisão dos conteúdos que serão cobrados. As avaliações de codificação utilizam compilador online configurado para TypeScript.
