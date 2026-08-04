@@ -1,5 +1,6 @@
 .DS_Store
 .env
+/.codex
 
 # Infraestrutura local de validação do material
 /package.json
