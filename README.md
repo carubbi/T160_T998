@@ -1,78 +1,88 @@
-# Raciocínio Lógico Algorítmico - RLA
+# T160 — Raciocínio Lógico Algorítmico
 
-Repositório acadêmico da disciplina de **Raciocínio Lógico Algorítmico** da **Universidade de Fortaleza (UNIFOR)**, destinado a estudantes de **Ciência da Computação**, **Análise e Desenvolvimento de Sistemas** e **Engenharia da Computação**.
+Materiais didáticos, exemplos em TypeScript e exercícios da disciplina da
+Universidade de Fortaleza.
 
-O material reúne conteúdos organizados por aula, atividades introdutórias, exercícios propostos e soluções didáticas.
+## Comece aqui
 
-## Objetivo
+1. Confira as [turmas e os horários](mat/ensino/turmas_2026_2.md).
+2. Abra o [cronograma das turmas 90/91](mat/ensino/cronograma_2026_2_turmas_90-91.md).
+3. Leia a [Aula 1 — resolução de problemas e algoritmos](mat/aulas/aula1/aula1.md).
+4. Execute os exemplos no [Programiz TypeScript Online Compiler](https://www.programiz.com/typescript/online-compiler/) ou no [TypeScript Playground](https://www.typescriptlang.org/play/).
+5. Consulte o [acervo de exercícios](mat/exs/).
 
-Centralizar os conteúdos da disciplina para estudo e acompanhamento, incluindo:
+## Disciplina e calendário
 
-- materiais teóricos em Markdown (`.md`);
-- apostilas/slides em PDF (`.pdf`);
-- exercícios propostos e resolvidos.
+- [Projeto de ensino 2026.2](mat/ensino/proj_ensino_2026.md)
+- [Calendário acadêmico 2026.2](mat/ensino/calendario_2026_2.md)
+- [Turmas e horários](mat/ensino/turmas_2026_2.md)
+- [Composição dos códigos de horário](mat/ensino/horarios.md)
+- [Cronograma das turmas 90/91](mat/ensino/cronograma_2026_2_turmas_90-91.md)
 
-## Idioma e linguagem de programação
+## Materiais de ensino
 
-- **Idioma da documentação:** português (pt-BR).
-- **Linguagem de programação:** TypeScript (exercícios e soluções práticas).
+- [Aulas da disciplina](mat/aulas/)
+- [Unidade I — fundamentos: aulas 1–3](mat/aulas/aula1/)
+- [Unidade II — estruturas de controle: aulas 4–7](mat/aulas/aula4/)
+- [Unidade III — algoritmos e funções: aula 8](mat/aulas/aula8/)
+- [Unidade IV — estruturas de dados simples: aulas 9–11](mat/aulas/aula9/)
+- [Exercícios e soluções didáticas](mat/exs/)
 
-Os exemplos podem ser executados diretamente no
-[Programiz TypeScript Online Compiler](https://www.programiz.com/typescript/online-compiler/)
-ou no [TypeScript Playground](https://www.typescriptlang.org/play/), sem
-instalação local.
+Os conteúdos progridem da representação de algoritmos para variáveis, entrada
+e saída, estruturas condicionais e de repetição, funções, vetores, matrizes,
+busca e ordenação.
+
+## Implementações e execução
+
+Os exemplos e exercícios são escritos em TypeScript e preparados para execução
+em compiladores online, sem instalação local obrigatória.
+
+- [Exemplos e exercícios por aula](mat/aulas/)
+- [Soluções didáticas de problemas](mat/exs/)
+- [TypeScript Playground](https://www.typescriptlang.org/play/)
+- [Programiz TypeScript Online Compiler](https://www.programiz.com/typescript/online-compiler/)
+
+Fluxogramas, pseudocódigo e testes de mesa são utilizados quando contribuem
+para a compreensão. Antes de considerar uma solução concluída, planeje casos de
+teste, execute o programa e verifique os resultados.
+
+## Exercícios complementares
+
+- [Exercícios e soluções para estudo](mat/exs/)
+- [Beecrowd](https://judge.beecrowd.com/pt)
+- [Olimpíada Brasileira de Informática — OBI](https://olimpiada.ic.unicamp.br/)
+- [Provas e tarefas anteriores da OBI](https://olimpiada.ic.unicamp.br/passadas/)
+
+As soluções do repositório são materiais de apoio ao estudo. Ao utilizá-las,
+compare estratégias, refaça os testes e certifique-se de compreender cada etapa
+do algoritmo.
 
 ## Estrutura do repositório
 
 ```text
 RLA/
-├── aula1/
-├── aula2/
-├── aula3/
-├── aula4/
-├── aula5/
-├── aula6/
-├── aula7/
-├── aula8/
-├── aula9/
-├── aula10/
-├── aula11/
-├── beecrowd/
-├── imgs/
+├── mat/
+│   ├── aulas/
+│   │   ├── aula1/
+│   │   ├── ...
+│   │   ├── aula11/
+│   │   └── imgs/
+│   ├── ensino/
+│   └── exs/
 └── README.md
 ```
 
-### Conteúdo por pasta
-
-- `aula1/`: introdução à organização de instruções por meio da atividade do
-  sanduíche, de um vídeo sobre instruções imprecisas e de uma discussão sobre
-  linguagem natural e inteligência artificial.
-- `aula2/` a `aula11/`: materiais teóricos, exercícios e scripts TypeScript
-  organizados conforme a progressão da disciplina.
-- `beecrowd/`: adaptações didáticas em TypeScript de problemas da
-  [plataforma Beecrowd](https://judge.beecrowd.com/pt). Os scripts usam
-  `prompt()` ou valores fixos e não representam
-  necessariamente o formato de submissão do juiz.
-- `imgs/`: imagens de apoio utilizadas nos materiais.
-
-## Branches
-
-- `main`: versão atual do material em TypeScript.
-- `javascript`: versão do material em JavaScript.
-
-## Como utilizar
-
-1. Acesse a pasta da aula desejada.
-2. Leia o arquivo `.md` para o conteúdo textual.
-3. Quando houver, consulte o arquivo `.pdf` correspondente como material complementar.
-4. Use os arquivos `aulaN_0.ts` para revisão conceitual e `aulaN_X.ts/.md`
-   para estudo por exercício.
-5. Na pasta `beecrowd/`, execute as soluções e compare com os enunciados da plataforma.
+- `mat/aulas/`: materiais teóricos, exercícios guiados, PDFs, imagens e
+  programas TypeScript organizados por aula.
+- `mat/ensino/`: projeto de ensino, calendário, turmas, horários, matrizes
+  curriculares e cronograma.
+- `mat/exs/`: enunciados e soluções didáticas de problemas de programação.
 
 ## Público-alvo
 
-Estudantes de Ciência da Computação, Análise e Desenvolvimento de Sistemas e Engenharia da Computação que estejam iniciando os estudos de programação, além de interessados em fundamentos de lógica e algoritmos.
+Estudantes que estejam iniciando os estudos de programação e interessados em
+fundamentos de lógica, algoritmos e resolução de problemas computacionais.
 
 ## Última atualização
 
-31/07/2026
+05/08/2026
