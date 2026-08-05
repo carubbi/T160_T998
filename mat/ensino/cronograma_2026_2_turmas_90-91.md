@@ -9,9 +9,9 @@
 - **Carga horária institucional:** 72 horas-aula de 50 minutos.
 - **Pré-requisito:** inexistente.
 - **Período letivo:** 03/08/2026 a 09/12/2026.
-- **Projeto de ensino:** [proj_ensino_2026.md](../../ensino/proj_ensino_2026.md).
-- **Calendário acadêmico:** [calendario_2026_2.md](../../ensino/calendario_2026_2.md).
-- **Turmas e horários:** [turmas_2026_2.md](../../ensino/turmas_2026_2.md).
+- **Projeto de ensino:** [proj_ensino_2026.md](proj_ensino_2026.md).
+- **Calendário acadêmico:** [calendario_2026_2.md](calendario_2026_2.md).
+- **Turmas e horários:** [turmas_2026_2.md](turmas_2026_2.md).
 
 ## 2. Organização das turmas
 
@@ -56,7 +56,7 @@
 - **Aula prática — ambiente de programação:** acesso e configuração do compilador online de TypeScript; console; primeiro algoritmo; execução, observação e correção de erros.
 - **Projeto de ensino:** 01.01 — Conceito e representação simbólica de algoritmos; 01.02 — Ambiente computacional.
 - **Recursos:**
-  - **Material didático:** [Aula 1](../../mat/aula1/aula1.md).
+  - **Material didático:** [Aula 1](../aulas/aula1/aula1.md).
   - **Exercício inicial:** algoritmo do sanduíche e primeiro programa.
 - **Produto/evidência:** descrição narrativa de um algoritmo; ambiente testado; programa elementar executado.
 
@@ -67,8 +67,8 @@
 - **Aula prática — representação e rastreamento:** converter problemas simples entre narrativa, fluxograma, pseudocódigo e TypeScript; executar testes de mesa; comparar representação e comportamento.
 - **Projeto de ensino:** 01.01 — Conceito e representação simbólica de algoritmos; 01.02 — Ambiente computacional.
 - **Recursos:**
-  - **Material didático:** [Aula 2](../../mat/aula2/aula2.md).
-  - **Exercícios:** [lista da Aula 2](../../mat/aula2/exercicios.md) e [exercícios resolvidos](../../mat/aula2/exs_aula2.md).
+  - **Material didático:** [Aula 2](../aulas/aula2/aula2.md).
+  - **Exercícios:** [lista da Aula 2](../aulas/aula2/exercicios.md) e [exercícios resolvidos](../aulas/aula2/exs_aula2.md).
 - **Produto/evidência:** fluxograma; pseudocódigo; teste de mesa; implementação correspondente.
 
 #### Semana 3 — Variáveis, tipos, expressões e operadores — 17–20/08
@@ -78,8 +78,8 @@
 - **Aula prática — cálculos e testes:** declarar variáveis; construir expressões; rastrear valores; calcular média, área e conversões; testar operadores relacionais e lógicos.
 - **Projeto de ensino:** 01.03 — Variáveis, tipos de dados, expressões e operadores.
 - **Recursos:**
-  - **Material didático:** [Aula 3](../../mat/aula3/aula3.md).
-  - **Exercícios:** [lista da Aula 3](../../mat/aula3/lista1.md) e [resolvidos](../../mat/aula3/resolvidos.md).
+  - **Material didático:** [Aula 3](../aulas/aula3/aula3.md).
+  - **Exercícios:** [lista da Aula 3](../aulas/aula3/lista1.md) e [resolvidos](../aulas/aula3/resolvidos.md).
 - **Produto/evidência:** tabela de variáveis; testes de mesa; programas com expressões tipadas.
 
 #### Semana 4 — Entrada, saída e estrutura sequencial — 24–25/08
@@ -88,7 +88,7 @@
 - **Aula teórica — interação e sequenciamento:** mecanismos de entrada compatíveis com o compilador online; conversão de tipos; saída com `console.log()`; sequenciamento de comandos; validação elementar de dados; depuração por rastreamento.
 - **Projeto de ensino:** 01.04 — Entrada e saída de dados.
 - **Recursos:**
-  - **Problemas básicos:** [Beecrowd 1001](../../mat/beecrowd/BEE1001.md), [1002](../../mat/beecrowd/BEE1002.md), [1005](../../mat/beecrowd/BEE1005.md) e [1011](../../mat/beecrowd/BEE1011.md).
+  - **Problemas básicos:** [Beecrowd 1001](../exs/BEE1001.md), [1002](../exs/BEE1002.md), [1005](../exs/BEE1005.md) e [1011](../exs/BEE1011.md).
 - **Produto/evidência:** planejamento de programa sequencial com entrada, processamento, saída e casos de teste previstos.
 
 ### Unidade II — Estruturas de controle de fluxo (18h)
@@ -99,7 +99,7 @@
 - **Aula prática — programas sequenciais e transição para decisões:** ler dados; processar fórmulas; formatar saídas; resolver problemas introdutórios; diagnosticar `NaN`, conversões e ordem incorreta de comandos; reconhecer situações que exigem decisão; introduzir condição lógica e seleção simples com `if`.
 - **Projeto de ensino:** 01.04 — Entrada e saída de dados; 02.01 — Sequenciamento de comandos; 02.02 — Estruturas condicionais simples (introdução).
 - **Recursos:**
-  - **Problemas básicos:** [Beecrowd 1001](../../mat/beecrowd/BEE1001.md), [1002](../../mat/beecrowd/BEE1002.md), [1005](../../mat/beecrowd/BEE1005.md) e [1011](../../mat/beecrowd/BEE1011.md).
+  - **Problemas básicos:** [Beecrowd 1001](../exs/BEE1001.md), [1002](../exs/BEE1002.md), [1005](../exs/BEE1005.md) e [1011](../exs/BEE1011.md).
 - **Produto/evidência:** programas sequenciais executáveis, casos de teste realizados e indicação de uma regra de decisão para a evolução do programa.
 
 #### Semana 5 — AF1.1 e estruturas condicionais — 31/08–03/09
@@ -109,8 +109,8 @@
 - **Aula integrada — estruturas condicionais:** condição lógica; `if`; `if...else`; condicionais encadeadas e aninhadas; `switch...case`; escolha da estrutura; implementação de classificação, comparação, intervalos, menus e validações; testes positivos, negativos e de fronteira.
 - **Projeto de ensino:** 02.01 — Sequenciamento; 02.02 — Estruturas condicionais simples, compostas e encadeadas.
 - **Recursos:**
-  - **Material didático:** [Aula 4](../../mat/aula4/aul4.md) e [exercícios](../../mat/aula4/exs_aula4.md).
-  - **Problemas:** [Beecrowd 1036](../../mat/beecrowd/BEE1036.md), [1037](../../mat/beecrowd/BEE1037.md) e [1042](../../mat/beecrowd/BEE1042.md).
+  - **Material didático:** [Aula 4](../aulas/aula4/aul4.md) e [exercícios](../aulas/aula4/exs_aula4.md).
+  - **Problemas:** [Beecrowd 1036](../exs/BEE1036.md), [1037](../exs/BEE1037.md) e [1042](../exs/BEE1042.md).
 - **Produto/evidência:** registro da AF1.1; solução condicional; conjunto de casos de teste; justificativa da estrutura escolhida.
 
 #### Semana 6 — AF1.2 e revisão integral da AS1 — 07–10/09
@@ -120,8 +120,8 @@
 - **Aula de revisão integral da AS1:** 100 minutos de revisão e integração de variáveis, tipos, expressões, operadores, entrada, saída, sequenciamento, estruturas condicionais, estratégias de resolução e casos de teste.
 - **Projeto de ensino:** 02.02 — Estruturas condicionais simples, compostas e encadeadas.
 - **Recursos:**
-  - **Material didático:** [Aula 5](../../mat/aula5/aula5.md), [Aula 6](../../mat/aula6/aula6.md) e respectivos exercícios.
-  - **Problemas:** [Beecrowd 1040](../../mat/beecrowd/BEE1040.md), [1045](../../mat/beecrowd/BEE1045.md) e [1049](../../mat/beecrowd/BEE1049.md).
+  - **Material didático:** [Aula 5](../aulas/aula5/aula5.md), [Aula 6](../aulas/aula6/aula6.md) e respectivos exercícios.
+  - **Problemas:** [Beecrowd 1040](../exs/BEE1040.md), [1045](../exs/BEE1045.md) e [1049](../exs/BEE1049.md).
 - **Produto/evidência:** registro da AF1.2; síntese de revisão; soluções preparatórias e casos de teste para a AS1.
 
 #### Semana 7 — AS1 e introdução às estruturas de repetição — 14–17/09
@@ -141,8 +141,8 @@
 - **Aula prática — rastreamento de laços:** contadores; acumuladores; validação de entrada; sentinelas; menus; tabuada; execução manual e diagnóstico de laços infinitos.
 - **Projeto de ensino:** 02.03 — Estruturas de repetição.
 - **Recursos:**
-  - **Material didático:** [Aula 7](../../mat/aula7/aula7.md) e [exercícios](../../mat/aula7/exs_aula7.md).
-  - **Problemas:** [Beecrowd 1078](../../mat/beecrowd/BEE1078.md), [1114](../../mat/beecrowd/BEE1114.md) e [1134](../../mat/beecrowd/BEE1134.md).
+  - **Material didático:** [Aula 7](../aulas/aula7/aula7.md) e [exercícios](../aulas/aula7/exs_aula7.md).
+  - **Problemas:** [Beecrowd 1078](../exs/BEE1078.md), [1114](../exs/BEE1114.md) e [1134](../exs/BEE1134.md).
 - **Produto/evidência:** teste de mesa de laço; programa com repetição; justificativa de terminação.
 
 ### Unidade III — Aplicação de algoritmos em problemas computacionais (22h)
@@ -154,7 +154,7 @@
 - **Aula prática — problemas iterativos:** múltiplas entradas; estatísticas; séries; divisores; comparação entre soluções com `while` e `for`.
 - **Projeto de ensino:** 02.03 — Estruturas de repetição (consolidação); 03.03 — Contagem, soma e multiplicação (introdução).
 - **Recursos:**
-  - **Problemas:** [Beecrowd 1070](../../mat/beecrowd/BEE1070.md), [1072](../../mat/beecrowd/BEE1072.md) e [1073](../../mat/beecrowd/BEE1073.md).
+  - **Problemas:** [Beecrowd 1070](../exs/BEE1070.md), [1072](../exs/BEE1072.md) e [1073](../exs/BEE1073.md).
 - **Produto/evidência:** solução iterativa; casos de teste; análise do estado do acumulador.
 
 #### Semana 10 — Algoritmos fundamentais — 05–08/10
@@ -164,8 +164,8 @@
 - **Aula prática — implementação e testes:** implementar e testar troca, fatorial, Fibonacci, conversão de base e geração de números primos com estruturas de repetição; examinar entradas inválidas, limites e complexidade intuitiva; registrar oportunidades de modularização.
 - **Projeto de ensino:** 03.02 a 03.07 — Algoritmos fundamentais.
 - **Recursos:**
-  - **Material didático:** [Aula 8](../../mat/aula8/aula8.md) e [exercícios](../../mat/aula8/exs_aula8.md).
-  - **Problemas:** [Beecrowd 1151](../../mat/beecrowd/BEE1151.md) e [1153](../../mat/beecrowd/BEE1153.md).
+  - **Material didático:** [Aula 8](../aulas/aula8/aula8.md) e [exercícios](../aulas/aula8/exs_aula8.md).
+  - **Problemas:** [Beecrowd 1151](../exs/BEE1151.md) e [1153](../exs/BEE1153.md).
 - **Produto/evidência:** soluções iterativas testadas para os algoritmos fundamentais; tabelas de rastreamento; registro de oportunidades de decomposição.
 
 #### Semana 11 — Feriado estudantil e AF2.1 — 12–15/10
@@ -175,8 +175,8 @@
 - **Marco avaliativo — AF2.1:** 40 minutos para dúvidas e revisão rápida de estruturas de repetição e algoritmos fundamentais — troca, contagem, soma, multiplicação, fatorial, Fibonacci, conversão de base e números primos —; 60 minutos para 10 questões objetivas no estilo ENADE, no AVA com Safe Exam Browser.
 - **Projeto de ensino:** 02.03 — Estruturas de repetição; 03.02 a 03.07 — Algoritmos fundamentais.
 - **Recursos:**
-  - **Material didático:** seções correspondentes da [Aula 8](../../mat/aula8/aula8.md).
-  - **Problemas:** [Beecrowd 1165](../../mat/beecrowd/BEE1165.md) e exercícios autorais de conversão.
+  - **Material didático:** seções correspondentes da [Aula 8](../aulas/aula8/aula8.md).
+  - **Problemas:** [Beecrowd 1165](../exs/BEE1165.md) e exercícios autorais de conversão.
 - **Produto/evidência:** registro da AF2.1 e diagnóstico do desempenho da turma no primeiro marco da AV2.
 
 #### Semana 12 — Funções e modularidade — 19–22/10
@@ -186,7 +186,7 @@
 - **Aula prática — modularidade e refatoração:** transformar soluções de troca, agregação, fatorial, Fibonacci, conversão de base e números primos em funções; testar unidades isoladamente; comparar soluções monolíticas e modulares.
 - **Projeto de ensino:** 03.01 — Reutilização de código com funções.
 - **Recursos:**
-  - **Material didático:** [Aula 8](../../mat/aula8/aula8.md).
+  - **Material didático:** [Aula 8](../aulas/aula8/aula8.md).
   - **Avaliação:** AVA/Moodle; Safe Exam Browser.
 - **Produto/evidência:** biblioteca de funções; contratos explícitos; testes isolados; comparação entre solução monolítica e modular.
 
@@ -197,7 +197,7 @@
 - **Aula de revisão integral da AS2:** 100 minutos de revisão e integração de repetição, algoritmos fundamentais, funções, modularidade, estratégias de decomposição e casos de teste.
 - **Projeto de ensino:** 03.01 — Reutilização de código com funções.
 - **Recursos:**
-  - **Material didático:** [Aula 8](../../mat/aula8/aula8.md).
+  - **Material didático:** [Aula 8](../aulas/aula8/aula8.md).
 - **Produto/evidência:** registro da AF2.2; síntese de revisão; soluções preparatórias e casos de teste para a AS2.
 
 #### Semana 14 — AS2 e consolidação da Unidade III — 02–05/11
@@ -219,7 +219,7 @@
 - **Aula prática — processamento de vetores:** ler e percorrer vetores; calcular agregações; localizar valores; inverter sequência; testar entradas vazias, unitárias e repetidas.
 - **Projeto de ensino:** 04.01 — Vetores.
 - **Recursos:**
-  - **Material didático:** [Aula 9](../../mat/aula9/aula9.md) e [exercícios](../../mat/aula9/exs_aula9.md).
+  - **Material didático:** [Aula 9](../aulas/aula9/aula9.md) e [exercícios](../aulas/aula9/exs_aula9.md).
 - **Produto/evidência:** programa com vetor; casos de teste; rastreamento de índices.
 
 #### Semana 16 — Busca e ordenação em vetores — 16–19/11
@@ -229,7 +229,7 @@
 - **Aula prática — implementar, rastrear e comparar:** busca linear e binária; ordenação crescente; contagem de operações; testes com ausente, duplicado, primeiro e último elemento.
 - **Projeto de ensino:** 04.02 — Busca linear e binária; 04.03 — Método da bolha.
 - **Recursos:**
-  - **Material didático:** [Aula 10](../../mat/aula10/aula10.md).
+  - **Material didático:** [Aula 10](../aulas/aula10/aula10.md).
 - **Produto/evidência:** implementações de busca e ordenação; testes; comparação de pré-condições e resultados.
 
 #### Semana 17 — AF3.1 e matrizes — 23–26/11
@@ -239,7 +239,7 @@
 - **Aula integrada — matrizes:** linhas; colunas; índices; criação e preenchimento; laços aninhados; soma e média; busca; agregação por linha e coluna; transposta; implementação, testes e diagnóstico de dimensões e índices.
 - **Projeto de ensino:** 04.01 — Matrizes.
 - **Recursos:**
-  - **Material didático:** [Aula 11](../../mat/aula11/aula11.md) e [exercícios](../../mat/aula11/exs_aula11.md).
+  - **Material didático:** [Aula 11](../aulas/aula11/aula11.md) e [exercícios](../aulas/aula11/exs_aula11.md).
 - **Produto/evidência:** registro da AF3.1; programa com matriz; testes de dimensões; rastreamento de laços aninhados.
 
 #### Semana 18 — AF3.2 e revisão integral da AS3 — 30/11–03/12
@@ -249,7 +249,7 @@
 - **Aula de revisão integral da AS3:** 100 minutos de revisão e integração de vetores, matrizes, busca linear, busca binária, Bubble Sort, pré-condições, rastreamento, comparação de soluções e casos de teste.
 - **Projeto de ensino:** síntese de 04.01 a 04.03.
 - **Recursos:**
-  - **Revisão:** [Aula 9](../../mat/aula9/aula9.md), [Aula 10](../../mat/aula10/aula10.md) e [Aula 11](../../mat/aula11/aula11.md).
+  - **Revisão:** [Aula 9](../aulas/aula9/aula9.md), [Aula 10](../aulas/aula10/aula10.md) e [Aula 11](../aulas/aula11/aula11.md).
   - **Avaliação:** Safe Exam Browser; enunciado e casos de teste.
 - **Produto/evidência:** registro da AF3.2; síntese comparativa; soluções preparatórias e casos de teste para a AS3.
 
